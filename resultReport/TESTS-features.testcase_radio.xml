@@ -1,0 +1,725 @@
+<testsuite errors="8" failures="0" name="features.testcase_radio.IPDA收音机的相关功能验证" skipped="0" tests="20" time="673.892952"><testcase classname="features.testcase_radio.IPDA收音机的相关功能验证" name="播放FM收音机节目并验证节目的正确性" status="passed" time="22.832268"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @radio_special_test
+  场景: 播放FM收音机节目并验证节目的正确性
+    当 < 打开收音机应用 ... passed in 2.369s
+    当 < 打开FM_AM选择界面 ... passed in 4.588s
+    当 < 播放指定FM节目 ... passed in 8.456s
+      | fm_no |
+      | 97.5  |
+    那么 < 验证播放的FM编号一致 ... passed in 7.419s
+      | chk_fm_no |
+      | 97.5      |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_radio.IPDA收音机的相关功能验证" name="切换上一首，然后下一首后 验证收音机恢复到原来节目" status="passed" time="20.857866"><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 切换上一首，然后下一首后 验证收音机恢复到原来节目
+    当 < 打开收音机应用 ... passed in 0.883s
+    当 < 打开FM_AM选择界面 ... passed in 1.287s
+    当 < 播放指定FM节目 ... passed in 4.799s
+      | fm_no |
+      | 97.5  |
+    当 < 切换上一台 ... passed in 0.289s
+    那么 < 验证播放的FM编号不一致 ... passed in 6.441s
+      | chk_fm_no |
+      | 97.5      |
+    当 < 切换下一台 ... passed in 0.332s
+    那么 < 验证播放的FM编号一致 ... passed in 6.827s
+      | chk_fm_no |
+      | 97.5      |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_radio.IPDA收音机的相关功能验证" name="预览所有电台并选中一个收听，验证当前播放的为选中的电台" status="failed" time="27.379301"><error message="" type="IndexError">
+<![CDATA[
+Failing step: 当 < 预览电台并随机收听 ... failed in 26.533s
+  | o_result |
+  | o_fm_no  |
+Location: features\testcase_radio.feature:34
+Traceback (most recent call last):
+  File "d:\python34\lib\site-packages\behave\model.py", line 1456, in run
+    match.run(runner.context)
+  File "d:\python34\lib\site-packages\behave\model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "steps\step_radio.py", line 64, in step_impl
+    fm_no1 = Radio().get_radio_no_playing_txt()
+  File "D:\pateo\at\autotestplat2.0\actions\radio.py", line 190, in get_radio_no_playing_txt
+    for s in ele:
+  File "d:\python34\lib\site-packages\uiautomator\__init__.py", line 1161, in next
+    return obj[self.index]
+  File "d:\python34\lib\site-packages\uiautomator\__init__.py", line 1142, in __getitem__
+    raise IndexError()
+IndexError
+
+Captured logging:
+INFO:urllib3.connectionpool:Resetting dropped connection: localhost]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @previewTest
+  场景: 预览所有电台并选中一个收听，验证当前播放的为选中的电台
+    当 < 打开收音机应用 ... passed in 0.846s
+    当 < 预览电台并随机收听 ... failed in 26.533s
+      | o_result |
+      | o_fm_no  |
+    那么 < 验证播放的FM编号一致 ... skipped in 0.000s
+      | chk_fm_no |
+      | o_fm_no   |
+    那么 < 验证放音通道一致 ... skipped in 0.000s
+      | chk_tinymix     |
+      | ASP RADIO Route |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_radio.IPDA收音机的相关功能验证" name="收藏FM电台并验证收藏记录，取消收藏" status="passed" time="35.513025"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @favTest
+  场景: 收藏FM电台并验证收藏记录，取消收藏
+    当 < 打开收音机应用 ... passed in 0.866s
+    当 < 打开FM_AM选择界面 ... passed in 1.319s
+    当 < 播放指定FM节目 ... passed in 4.331s
+      | fm_no |
+      | 97.5  |
+    当 < 收藏或取消收藏电台 ... passed in 0.385s
+    当 < 打开FM_AM选择界面 ... passed in 1.303s
+    那么 < 验证FM是否被收藏 ... passed in 10.072s
+      | chk_fm_no | chk_is_faved |
+      | 97.5      | true         |
+    当 < 收藏或取消收藏电台 ... passed in 1.403s
+    当 < 打开FM_AM选择界面 ... passed in 1.222s
+    那么 < 验证FM是否被收藏 ... passed in 14.612s
+      | chk_fm_no | chk_is_faved |
+      | 97.5      | false        |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_radio.IPDA收音机的相关功能验证" name="播放已经收藏的电台,验证是否播放指定的电台和播放状态" status="passed" time="22.858351"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @playFavedTest
+  场景: 播放已经收藏的电台,验证是否播放指定的电台和播放状态
+    当 < 打开收音机应用 ... passed in 0.949s
+    当 < 打开FM_AM选择界面 ... passed in 1.551s
+    当 < 播放指定FM节目 ... passed in 4.179s
+      | fm_no |
+      | 97.5  |
+    当 < 收藏或取消收藏电台 ... passed in 0.419s
+    当 < 切换下一台 ... passed in 0.555s
+    当 < 打开FM_AM选择界面 ... passed in 1.353s
+    当 < 播放已经收藏的电台 ... passed in 2.525s
+    那么 < 验证播放的FM编号一致 ... passed in 5.687s
+      | chk_fm_no |
+      | 97.5      |
+    那么 < 验证电台是否播放 ... passed in 5.313s
+      | chk_is_playing |
+      | true           |
+    当 < 收藏或取消收藏电台 ... passed in 0.327s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_radio.IPDA收音机的相关功能验证" name="输入输入框内容并清空，验证输入框内容是否清空" status="passed" time="3.445594"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @searchRadioTest
+  场景: 输入输入框内容并清空，验证输入框内容是否清空
+    当 < 打开收音机应用 ... passed in 0.900s
+    当 < 打开搜索界面 ... passed in 0.755s
+    当 < 输入电台搜索关键字 ... passed in 1.222s
+      | key_word |
+      | 南京       |
+    当 < 清空电台搜索框 ... passed in 0.300s
+    那么 < 验证电台搜索框内容 ... passed in 0.269s
+      | chk_key_word |
+      | 搜索           |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_radio.IPDA收音机的相关功能验证" name="打开电台搜索并取消，回到radio主界面，验证是否回到主界面" status="passed" time="2.765128"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @searchcancelTest
+  场景: 打开电台搜索并取消，回到radio主界面，验证是否回到主界面
+    当 < 打开收音机应用 ... passed in 0.817s
+    当 < 打开搜索界面 ... passed in 0.784s
+    当 < 取消电台搜索 ... passed in 0.898s
+    那么 < 验证当前为收音机主界面 ... passed in 0.266s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_radio.IPDA收音机的相关功能验证" name="收听搜索的电台，并验证播放状态和电台标题" status="failed" time="14.954219"><error message="收音机搜索结果为空，请参考截图信息: file://D:\\screenshots\20160701145210.png" type="Exception">
+<![CDATA[
+Failing step: 当 < 随机播放搜索电台 ... failed in 12.182s
+  | o_result |
+  | o_fm_no  |
+Location: features\testcase_radio.feature:101
+Traceback (most recent call last):
+  File "d:\python34\lib\site-packages\behave\model.py", line 1456, in run
+    match.run(runner.context)
+  File "d:\python34\lib\site-packages\behave\model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "steps\step_radio.py", line 141, in step_impl
+    fm_no = Radio().click_radio_search_list_title_random_ele()
+  File "D:\pateo\at\autotestplat2.0\actions\radio.py", line 590, in click_radio_search_list_title_random_ele
+    Utils().raise_Exception_info('收音机搜索结果为空')
+  File "D:\pateo\at\autotestplat2.0\utils\utils.py", line 96, in raise_Exception_info
+    raise Exception(err_msg + '，请参考截图信息: ' + self.get_file_path())
+Exception: 收音机搜索结果为空，请参考截图信息: file://D:\\screenshots\20160701145210.png
+
+Captured stdout:
+D:\\screenshots\20160701145210.png
+开始检查应用是否crash
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @searchAndPlayTest
+  场景: 收听搜索的电台，并验证播放状态和电台标题
+    当 < 打开收音机应用 ... passed in 0.901s
+    当 < 打开搜索界面 ... passed in 0.792s
+    当 < 输入电台搜索关键字 ... passed in 1.080s
+      | key_word |
+      | 南京       |
+    当 < 随机播放搜索电台 ... failed in 12.182s
+      | o_result |
+      | o_fm_no  |
+    那么 < 验证播放的FM编号一致 ... skipped in 0.000s
+      | chk_fm_no |
+      | o_fm_no   |
+    那么 < 验证电台是否播放 ... skipped in 0.000s
+      | chk_is_playing |
+      | true           |
+    那么 < 验证放音通道一致 ... skipped in 0.000s
+      | chk_tinymix     |
+      | ASP RADIO Route |
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+D:\\screenshots\20160701145210.png
+开始检查应用是否crash
+
+]]>
+</system-out></testcase><testcase classname="features.testcase_radio.IPDA收音机的相关功能验证" name="随机播放蜻蜓FM并验证标题和节目是否一致" status="failed" time="48.465464"><error message="节目列表为空，可能是网络原因，请参考截图信息: file://D:\\screenshots\20160701145322.png" type="Exception">
+<![CDATA[
+Failing step: 当 < 随机播放蜻蜓FM节目 ... failed in 40.063s
+  | o_result |
+  | o_name   |
+Location: features\testcase_radio.feature:119
+Traceback (most recent call last):
+  File "d:\python34\lib\site-packages\behave\model.py", line 1456, in run
+    match.run(runner.context)
+  File "d:\python34\lib\site-packages\behave\model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "steps\step_radio.py", line 164, in step_impl
+    name = Radio().click_radio_qt_category_list_name_random_ele()
+  File "D:\pateo\at\autotestplat2.0\actions\radio.py", line 445, in click_radio_qt_category_list_name_random_ele
+    Utils().raise_Exception_info('节目列表为空，可能是网络原因')
+  File "D:\pateo\at\autotestplat2.0\utils\utils.py", line 96, in raise_Exception_info
+    raise Exception(err_msg + '，请参考截图信息: ' + self.get_file_path())
+Exception: 节目列表为空，可能是网络原因，请参考截图信息: file://D:\\screenshots\20160701145322.png
+
+Captured stdout:
+D:\\screenshots\20160701145322.png
+开始检查应用是否crash
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @radioQTTest
+  场景: 随机播放蜻蜓FM并验证标题和节目是否一致
+    当 < 打开收音机应用 ... passed in 0.753s
+    当 < 打开蜻蜓FM ... passed in 0.932s
+    当 < 随机播放蜻蜓FM栏目 ... passed in 6.717s
+      | o_result |
+      | o_title  |
+    当 < 随机播放蜻蜓FM节目 ... failed in 40.063s
+      | o_result |
+      | o_name   |
+    那么 < 验证播放蜻蜓FM标题一致 ... skipped in 0.000s
+      | chk_qt_title |
+      | o_title      |
+    那么 < 验证播放FM节目一致 ... skipped in 0.000s
+      | chk_name |
+      | o_name   |
+    那么 < 验证电台是否播放 ... skipped in 0.000s
+      | chk_is_playing |
+      | true           |
+    那么 < 验证放音通道一致 ... skipped in 0.000s
+      | chk_tinymix     |
+      | ASP MEDIA Route |
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+D:\\screenshots\20160701145322.png
+开始检查应用是否crash
+
+]]>
+</system-out></testcase><testcase classname="features.testcase_radio.IPDA收音机的相关功能验证" name="随机播放蜻蜓FM并验证最近收听记录" status="failed" time="47.766132"><error message="节目列表为空，可能是网络原因，请参考截图信息: file://D:\\screenshots\20160701145429.png" type="Exception">
+<![CDATA[
+Failing step: 当 < 随机播放蜻蜓FM节目 ... failed in 40.588s
+  | o_result |
+  | o_name   |
+Location: features\testcase_radio.feature:140
+Traceback (most recent call last):
+  File "d:\python34\lib\site-packages\behave\model.py", line 1456, in run
+    match.run(runner.context)
+  File "d:\python34\lib\site-packages\behave\model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "steps\step_radio.py", line 164, in step_impl
+    name = Radio().click_radio_qt_category_list_name_random_ele()
+  File "D:\pateo\at\autotestplat2.0\actions\radio.py", line 445, in click_radio_qt_category_list_name_random_ele
+    Utils().raise_Exception_info('节目列表为空，可能是网络原因')
+  File "D:\pateo\at\autotestplat2.0\utils\utils.py", line 96, in raise_Exception_info
+    raise Exception(err_msg + '，请参考截图信息: ' + self.get_file_path())
+Exception: 节目列表为空，可能是网络原因，请参考截图信息: file://D:\\screenshots\20160701145429.png
+
+Captured stdout:
+D:\\screenshots\20160701145429.png
+开始检查应用是否crash
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @qtLatestTest
+  场景: 随机播放蜻蜓FM并验证最近收听记录
+    当 < 打开收音机应用 ... passed in 0.932s
+    当 < 打开蜻蜓FM ... passed in 0.816s
+    当 < 随机播放蜻蜓FM栏目 ... passed in 5.430s
+      | o_result |
+      | o_title  |
+    当 < 随机播放蜻蜓FM节目 ... failed in 40.588s
+      | o_result |
+      | o_name   |
+    当 < 打开蜻蜓FM ... skipped in 0.000s
+    那么 < 验证最近收听含有节目 ... skipped in 0.000s
+      | chk_qt_name |
+      | o_name      |
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+D:\\screenshots\20160701145429.png
+开始检查应用是否crash
+
+]]>
+</system-out></testcase><testcase classname="features.testcase_radio.IPDA收音机的相关功能验证" name="收藏蜻蜓FM并验证我的收藏存在收藏记录" status="failed" time="47.797016"><error message="节目列表为空，可能是网络原因，请参考截图信息: file://D:\\screenshots\20160701145536.png" type="Exception">
+<![CDATA[
+Failing step: 当 < 随机播放蜻蜓FM节目 ... failed in 40.455s
+  | o_result |
+  | o_name   |
+Location: features\testcase_radio.feature:153
+Traceback (most recent call last):
+  File "d:\python34\lib\site-packages\behave\model.py", line 1456, in run
+    match.run(runner.context)
+  File "d:\python34\lib\site-packages\behave\model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "steps\step_radio.py", line 164, in step_impl
+    name = Radio().click_radio_qt_category_list_name_random_ele()
+  File "D:\pateo\at\autotestplat2.0\actions\radio.py", line 445, in click_radio_qt_category_list_name_random_ele
+    Utils().raise_Exception_info('节目列表为空，可能是网络原因')
+  File "D:\pateo\at\autotestplat2.0\utils\utils.py", line 96, in raise_Exception_info
+    raise Exception(err_msg + '，请参考截图信息: ' + self.get_file_path())
+Exception: 节目列表为空，可能是网络原因，请参考截图信息: file://D:\\screenshots\20160701145536.png
+
+Captured stdout:
+D:\\screenshots\20160701145536.png
+开始检查应用是否crash
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @qtFavedTest
+  场景: 收藏蜻蜓FM并验证我的收藏存在收藏记录
+    当 < 打开收音机应用 ... passed in 0.901s
+    当 < 打开蜻蜓FM ... passed in 0.770s
+    当 < 随机播放蜻蜓FM栏目 ... passed in 5.671s
+      | o_result |
+      | o_title  |
+    当 < 随机播放蜻蜓FM节目 ... failed in 40.455s
+      | o_result |
+      | o_name   |
+    当 < 收藏或取消蜻蜓FM电台 ... skipped in 0.000s
+    当 < 打开蜻蜓FM ... skipped in 0.000s
+    那么 < 验证蜻蜓FM是否被收藏 ... skipped in 0.000s
+      | chk_qt_title | chk_is_faved |
+      | o_title      | true         |
+    当 < 收藏或取消蜻蜓FM电台 ... skipped in 0.000s
+    那么 < 验证蜻蜓FM是否被收藏 ... skipped in 0.000s
+      | chk_qt_title | chk_is_faved |
+      | o_title      | false        |
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+D:\\screenshots\20160701145536.png
+开始检查应用是否crash
+
+]]>
+</system-out></testcase><testcase classname="features.testcase_radio.IPDA收音机的相关功能验证" name="播放收藏的fm并验证播放标题是否正确" status="failed" time="48.251695"><error message="节目列表为空，可能是网络原因，请参考截图信息: file://D:\\screenshots\20160701145644.png" type="Exception">
+<![CDATA[
+Failing step: 当 < 随机播放蜻蜓FM节目 ... failed in 40.676s
+  | o_result |
+  | o_name   |
+Location: features\testcase_radio.feature:171
+Traceback (most recent call last):
+  File "d:\python34\lib\site-packages\behave\model.py", line 1456, in run
+    match.run(runner.context)
+  File "d:\python34\lib\site-packages\behave\model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "steps\step_radio.py", line 164, in step_impl
+    name = Radio().click_radio_qt_category_list_name_random_ele()
+  File "D:\pateo\at\autotestplat2.0\actions\radio.py", line 445, in click_radio_qt_category_list_name_random_ele
+    Utils().raise_Exception_info('节目列表为空，可能是网络原因')
+  File "D:\pateo\at\autotestplat2.0\utils\utils.py", line 96, in raise_Exception_info
+    raise Exception(err_msg + '，请参考截图信息: ' + self.get_file_path())
+Exception: 节目列表为空，可能是网络原因，请参考截图信息: file://D:\\screenshots\20160701145644.png
+
+Captured stdout:
+D:\\screenshots\20160701145644.png
+开始检查应用是否crash
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 播放收藏的fm并验证播放标题是否正确
+    当 < 打开收音机应用 ... passed in 0.869s
+    当 < 打开蜻蜓FM ... passed in 0.801s
+    当 < 随机播放蜻蜓FM栏目 ... passed in 5.906s
+      | o_result |
+      | o_title  |
+    当 < 随机播放蜻蜓FM节目 ... failed in 40.676s
+      | o_result |
+      | o_name   |
+    当 < 收藏或取消蜻蜓FM电台 ... skipped in 0.000s
+    当 < 播放收藏的蜻蜓FM ... skipped in 0.000s
+      | o_result      |
+      | o_title_faved |
+    那么 < 验证播放蜻蜓FM标题一致 ... skipped in 0.000s
+      | chk_qt_title |
+      | o_title      |
+    那么 < 验证播放蜻蜓FM标题一致 ... skipped in 0.000s
+      | chk_qt_title  |
+      | o_title_faved |
+    当 < 收藏或取消蜻蜓FM电台 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+D:\\screenshots\20160701145644.png
+开始检查应用是否crash
+
+]]>
+</system-out></testcase><testcase classname="features.testcase_radio.IPDA收音机的相关功能验证" name="播放蜻蜓FM的下一曲，验证栏目名称不变，节目名称改变" status="failed" time="48.041291"><error message="节目列表为空，可能是网络原因，请参考截图信息: file://D:\\screenshots\20160701145751.png" type="Exception">
+<![CDATA[
+Failing step: 当 < 随机播放蜻蜓FM节目 ... failed in 40.540s
+  | o_result |
+  | o_name   |
+Location: features\testcase_radio.feature:192
+Traceback (most recent call last):
+  File "d:\python34\lib\site-packages\behave\model.py", line 1456, in run
+    match.run(runner.context)
+  File "d:\python34\lib\site-packages\behave\model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "steps\step_radio.py", line 164, in step_impl
+    name = Radio().click_radio_qt_category_list_name_random_ele()
+  File "D:\pateo\at\autotestplat2.0\actions\radio.py", line 445, in click_radio_qt_category_list_name_random_ele
+    Utils().raise_Exception_info('节目列表为空，可能是网络原因')
+  File "D:\pateo\at\autotestplat2.0\utils\utils.py", line 96, in raise_Exception_info
+    raise Exception(err_msg + '，请参考截图信息: ' + self.get_file_path())
+Exception: 节目列表为空，可能是网络原因，请参考截图信息: file://D:\\screenshots\20160701145751.png
+
+Captured stdout:
+D:\\screenshots\20160701145751.png
+开始检查应用是否crash
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @qtNestTest
+  场景: 播放蜻蜓FM的下一曲，验证栏目名称不变，节目名称改变
+    当 < 打开收音机应用 ... passed in 0.780s
+    当 < 打开蜻蜓FM ... passed in 0.835s
+    当 < 随机播放蜻蜓FM栏目 ... passed in 5.887s
+      | o_result |
+      | o_title  |
+    当 < 随机播放蜻蜓FM节目 ... failed in 40.540s
+      | o_result |
+      | o_name   |
+    当 < 切换下一台 ... skipped in 0.000s
+    那么 < 验证播放蜻蜓FM标题一致 ... skipped in 0.000s
+      | chk_qt_title |
+      | o_title      |
+    那么 < 验证播放FM节目不一致 ... skipped in 0.000s
+      | chk_name |
+      | o_name   |
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+D:\\screenshots\20160701145751.png
+开始检查应用是否crash
+
+]]>
+</system-out></testcase><testcase classname="features.testcase_radio.IPDA收音机的相关功能验证" name="播放和暂停，验证FM播放状态是否正确" status="passed" time="21.429127"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @playAndPauseTest
+  场景: 播放和暂停，验证FM播放状态是否正确
+    当 < 打开收音机应用 ... passed in 0.802s
+    当 < 打开FM_AM选择界面 ... passed in 1.217s
+    当 < 随机播放FM节目 ... passed in 3.907s
+      | o_result |
+      | o_fm_no  |
+    那么 < 验证电台是否播放 ... passed in 5.328s
+      | chk_is_playing |
+      | true           |
+    当 < 播放或暂停FM电台 ... passed in 1.348s
+    那么 < 验证电台是否播放 ... passed in 2.216s
+      | chk_is_playing |
+      | false          |
+    当 < 播放或暂停FM电台 ... passed in 1.270s
+    那么 < 验证电台是否播放 ... passed in 5.340s
+      | chk_is_playing |
+      | true           |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_radio.IPDA收音机的相关功能验证" name="FM切换到音乐再返回FM，验证FM的电台号和播放状态，放音通道" status="passed" time="77.968086"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @fm2audio2fmTest
+  场景: FM切换到音乐再返回FM，验证FM的电台号和播放状态，放音通道
+    当 < 打开收音机应用 ... passed in 0.901s
+    当 < 打开FM_AM选择界面 ... passed in 1.186s
+    当 < 随机播放FM节目 ... passed in 3.756s
+      | o_result |
+      | o_fm_no  |
+    那么 < 验证电台是否播放 ... passed in 5.326s
+      | chk_is_playing |
+      | true           |
+    当 < 回到系统主界面 ... passed in 26.822s
+    当 < 打开音乐应用 ... passed in 0.986s
+    当 < 点击我的音乐库 ... passed in 2.336s
+    当 < 播放本地指定音乐 ... passed in 9.265s
+      | music_name |
+      | 李白         |
+    那么 < 验证音乐名称一致 ... passed in 0.369s
+      | chk_music_name |
+      | 李白             |
+    当 < 回到系统主界面 ... passed in 14.098s
+    当 < 打开收音机应用 ... passed in 0.954s
+    那么 < 验证播放的FM编号一致 ... passed in 6.611s
+      | chk_fm_no |
+      | o_fm_no   |
+    那么 < 验证放音通道一致 ... passed in 0.062s
+      | chk_tinymix     |
+      | ASP RADIO Route |
+    那么 < 验证电台是否播放 ... passed in 5.296s
+      | chk_is_playing |
+      | true           |
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+期望音乐名称为: 李白
+实际音乐名称为: 李白
+查询的tinymix的结果为: Asp Primary Route:	ASP NO Route	>ASP RADIO Route	ASP MEDIA Route	ASP MIC Route	ASP BTPHONE Route	ASP BTMUSIC Route	ASP AUXIN Route	ASP PHONE Route
+
+
+获取当前的放音通道为: ASP RADIO Route
+
+]]>
+</system-out></testcase><testcase classname="features.testcase_radio.IPDA收音机的相关功能验证" name="调整收音机微调，验证FM电台变化" status="passed" time="27.897031"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @weitiaoTest
+  场景: 调整收音机微调，验证FM电台变化
+    当 < 打开收音机应用 ... passed in 0.738s
+    当 < 打开FM_AM选择界面 ... passed in 1.287s
+    当 < 随机播放FM节目 ... passed in 3.870s
+      | o_result |
+      | o_fm_no  |
+    那么 < 验证播放的FM编号一致 ... passed in 6.795s
+      | chk_fm_no |
+      | o_fm_no   |
+    当 < 调整收音机微调 ... passed in 2.760s
+    那么 < 验证播放的FM编号不一致 ... passed in 7.090s
+      | chk_fm_no |
+      | o_fm_no   |
+    那么 < 验证电台是否播放 ... passed in 5.357s
+      | chk_is_playing |
+      | true           |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_radio.IPDA收音机的相关功能验证" name="收音机听歌识曲功能验证" status="passed" time="39.697717"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @tgsqTest
+  场景: 收音机听歌识曲功能验证
+    当 < 打开收音机应用 ... passed in 0.900s
+    当 < 打开FM_AM选择界面 ... passed in 1.271s
+    当 < 播放指定FM节目 ... passed in 6.207s
+      | fm_no |
+      | 89.7  |
+    当 < 点击听歌识曲 ... passed in 0.317s
+    那么 < 验证听歌识曲正确 ... passed in 31.003s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_radio.IPDA收音机的相关功能验证" name="radio-&gt;audio" status="passed" time="45.72823"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @radioAudio
+  场景: radio->audio
+    当 < 打开收音机应用 ... passed in 0.953s
+    当 < 打开FM_AM选择界面 ... passed in 1.206s
+    当 < 播放指定FM节目 ... passed in 6.111s
+      | fm_no |
+      | 97.5  |
+    那么 < 验证电台是否播放 ... passed in 5.312s
+      | chk_is_playing |
+      | true           |
+    当 < 回到系统主界面 ... passed in 26.770s
+    当 < 打开音乐应用 ... passed in 0.854s
+    当 < 点击我的音乐库 ... passed in 1.017s
+    当 < 播放本地指定音乐 ... passed in 3.506s
+      | music_name |
+      | 李白         |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_radio.IPDA收音机的相关功能验证" name="同一首歌听歌识别曲两遍后，验证播放状态和歌曲名字" status="failed" time="39.796958"><error message="音乐名字控件不存在，请参考截图信息: file://D:\\screenshots\20160701150425.png" type="Exception">
+<![CDATA[
+Failing step: 那么 < 验证音乐名称一致 ... failed in 12.431s
+  | chk_music_name |
+  | o_name         |
+Location: features\testcase_radio.feature:307
+Traceback (most recent call last):
+  File "d:\python34\lib\site-packages\behave\model.py", line 1456, in run
+    match.run(runner.context)
+  File "d:\python34\lib\site-packages\behave\model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "steps\step_audio.py", line 45, in step_impl
+    cur_music_name = Audio().get_audio_name_playing_txt()
+  File "D:\pateo\at\autotestplat2.0\actions\audio.py", line 275, in get_audio_name_playing_txt
+    Utils().raise_Exception_info('音乐名字控件不存在')
+  File "D:\pateo\at\autotestplat2.0\utils\utils.py", line 96, in raise_Exception_info
+    raise Exception(err_msg + '，请参考截图信息: ' + self.get_file_path())
+Exception: 音乐名字控件不存在，请参考截图信息: file://D:\\screenshots\20160701150425.png
+
+Captured stdout:
+D:\\screenshots\20160701150425.png
+开始检查应用是否crash
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @ide_audio_radio
+  场景: 同一首歌听歌识别曲两遍后，验证播放状态和歌曲名字
+    当 < 打开收音机应用 ... passed in 0.953s
+    当 < 打开FM_AM选择界面 ... passed in 1.648s
+    当 < 播放指定FM节目 ... passed in 4.925s
+      | fm_no |
+      | 97.5  |
+    那么 < 验证电台是否播放 ... passed in 5.292s
+      | chk_is_playing |
+      | true           |
+    当 < 点击听歌识曲并播放 ... passed in 11.545s
+      | o_result |
+      | o_name   |
+    当 < 延时 ... passed in 3.004s
+      | sleep_time |
+      | 3          |
+    那么 < 验证音乐名称一致 ... failed in 12.431s
+      | chk_music_name |
+      | o_name         |
+    当 < 从听歌识曲返回收音机 ... skipped in 0.000s
+    当 < 点击听歌识曲并播放 ... skipped in 0.000s
+      | o_result |
+      | o_name1  |
+    当 < 延时 ... skipped in 0.000s
+      | sleep_time |
+      | 3          |
+    那么 < 验证音乐名称一致 ... skipped in 0.000s
+      | chk_music_name |
+      | o_name         |
+    那么 < 验证音乐名称一致 ... skipped in 0.000s
+      | chk_music_name |
+      | o_name1        |
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+D:\\screenshots\20160701150425.png
+开始检查应用是否crash
+
+]]>
+</system-out></testcase><testcase classname="features.testcase_radio.IPDA收音机的相关功能验证" name="随机选择网络回听节目，并验证节目名称" status="passed" time="30.448453"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @his_played_test
+  场景: 随机选择网络回听节目，并验证节目名称
+    当 < 打开收音机应用 ... passed in 0.895s
+    当 < 打开FM_AM选择界面 ... passed in 1.294s
+    当 < 播放指定FM节目 ... passed in 4.663s
+      | fm_no |
+      | 97.5  |
+    当 < 打开电台节目列表 ... passed in 0.816s
+    当 < 随机播放网络回听节目 ... passed in 16.624s
+      | o_result |
+      | o_name   |
+    那么 < 验证播放FM节目一致 ... passed in 0.404s
+      | chk_name |
+      | o_name   |
+    那么 < 验证电台是否播放 ... passed in 5.753s
+      | chk_is_playing |
+      | true           |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

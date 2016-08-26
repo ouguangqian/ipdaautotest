@@ -1,0 +1,26 @@
+<testsuite errors="0" failures="0" name="features.testcase_other.其他菜单中的应用测试：Qplay" skipped="1" tests="1" time="0.0"><testcase classname="features.testcase_other.其他菜单中的应用测试：Qplay" name="播放QPlay音乐，在standby状态下手机端退出车载模式，退出standby后“MainService”已停止运行 #83629" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @qplayTest
+  场景: 播放QPlay音乐，在standby状态下手机端退出车载模式，退出standby后“MainService”已停止运行 #83629
+    当 < 打开九宫格界面 ... skipped in 0.000s
+    当 < 打开其他菜单 ... skipped in 0.000s
+    当 < 打开Qplay ... skipped in 0.000s
+    那么 < 验证Qplay连接成功 ... skipped in 0.000s
+    当 < 选择Qplay歌曲 ... skipped in 0.000s
+      | o_result |
+      | o_name   |
+    那么 < 验证Qplay手机歌曲是否一致 ... skipped in 0.000s
+      | chk_name |
+      | o_name   |
+    那么 < 验证Qplay歌曲是否一致 ... skipped in 0.000s
+      | chk_name |
+      | o_name   |
+    当 < 手机退出车机模式 ... skipped in 0.000s
+    那么 < 验证当前为Qplay初始界面 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

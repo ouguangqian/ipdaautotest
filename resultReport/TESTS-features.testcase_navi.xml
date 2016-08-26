@@ -1,0 +1,24 @@
+<testsuite errors="0" failures="0" name="features.testcase_navi.导航功能验证" skipped="1" tests="1" time="0.0"><testcase classname="features.testcase_navi.导航功能验证" name="后台播放收音机，连接蓝牙后，回到主页点击导航，导航出现CRASH" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @bluetooth_navi_test
+  场景: 后台播放收音机，连接蓝牙后，回到主页点击导航，导航出现CRASH
+    当 < 断开蓝牙连接 ... skipped in 0.000s
+    当 < 打开收音机应用 ... skipped in 0.000s
+    当 < 打开FM_AM选择界面 ... skipped in 0.000s
+    当 < 播放指定FM节目 ... skipped in 0.000s
+      | fm_no |
+      | 97.5  |
+    当 < 回到系统主界面 ... skipped in 0.000s
+    当 < 连接蓝牙 ... skipped in 0.000s
+    当 < 打开导航 ... skipped in 0.000s
+    当 < 延时 ... skipped in 0.000s
+      | sleep_time |
+      | 3          |
+    那么 < 验证当前为导航主界面 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

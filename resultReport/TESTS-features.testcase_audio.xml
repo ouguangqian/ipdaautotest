@@ -1,0 +1,751 @@
+<testsuite errors="0" failures="0" name="features.testcase_audio.IPDA音乐的相关功能验证" skipped="32" tests="32" time="0.0"><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="播放本地指定音乐" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @play_local_music
+  场景: 播放本地指定音乐
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 点击我的音乐库 ... skipped in 0.000s
+    当 < 播放本地指定音乐 ... skipped in 0.000s
+      | music_name |
+      | 李白         |
+    那么 < 验证音乐名称一致 ... skipped in 0.000s
+      | chk_music_name |
+      | 李白             |
+    那么 < 验证歌手名字一致 ... skipped in 0.000s
+      | chk_artist |
+      | 李荣浩        |
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+    那么 < 验证放音通道一致 ... skipped in 0.000s
+      | chk_tinymix     |
+      | ASP MEDIA Route |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="搜索网络音乐并指定演唱者播放" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @netAudioTest
+  场景: 搜索网络音乐并指定演唱者播放
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 打开音乐搜索 ... skipped in 0.000s
+    当 < 根据关键字搜索网络音乐 ... skipped in 0.000s
+      | key_word |
+      | 世界第一等    |
+    当 < 根据歌手播放搜索结果 ... skipped in 0.000s
+      | artist |
+      | 张杰     |
+    那么 < 验证音乐名称一致 ... skipped in 0.000s
+      | chk_music_name |
+      | 世界第一等          |
+    那么 < 验证歌手名字一致 ... skipped in 0.000s
+      | chk_artist |
+      | 张杰         |
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="搜索网络音乐并指定音乐播放" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @net_music_test
+  场景: 搜索网络音乐并指定音乐播放
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 打开音乐搜索 ... skipped in 0.000s
+    当 < 根据关键字搜索网络音乐 ... skipped in 0.000s
+      | key_word |
+      | 刘德华      |
+    当 < 根据音乐播放搜索结果 ... skipped in 0.000s
+      | music_name |
+      | 一起走过的日子    |
+    那么 < 验证音乐名称一致 ... skipped in 0.000s
+      | chk_music_name |
+      | 一起走过的日子        |
+    那么 < 验证歌手名字一致 ... skipped in 0.000s
+      | chk_artist |
+      | 刘德华        |
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="播放5s后切换上一首音乐，音乐从头播放,不会切歌" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @prevAfter5sTest
+  场景: 播放5s后切换上一首音乐，音乐从头播放,不会切歌
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 点击我的音乐库 ... skipped in 0.000s
+    当 < 播放本地指定音乐 ... skipped in 0.000s
+      | music_name |
+      | 李白         |
+    当 < 延时 ... skipped in 0.000s
+      | sleep_time |
+      | 5          |
+    当 < 切换上一首音乐 ... skipped in 0.000s
+    那么 < 验证音乐名称一致 ... skipped in 0.000s
+      | chk_music_name |
+      | 李白             |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="播放5s内切换上一首音乐，音乐切歌到上一首" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @prev_in_5s_Test
+  场景: 播放5s内切换上一首音乐，音乐切歌到上一首
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 点击我的音乐库 ... skipped in 0.000s
+    当 < 播放本地指定音乐 ... skipped in 0.000s
+      | music_name |
+      | 李白         |
+    当 < 切换上一首音乐 ... skipped in 0.000s
+    那么 < 验证音乐名称不一致 ... skipped in 0.000s
+      | chk_music_name |
+      | 李白             |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="暂停和播放音乐，验证播放状态是否正常" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @pauseAndPlayTest
+  场景: 暂停和播放音乐，验证播放状态是否正常
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 点击我的音乐库 ... skipped in 0.000s
+    当 < 播放本地指定音乐 ... skipped in 0.000s
+      | music_name |
+      | 李白         |
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+    当 < 播放或暂停音乐 ... skipped in 0.000s
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | false      |
+    当 < 播放或暂停音乐 ... skipped in 0.000s
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="切换下一首音乐，验证音乐切换成功" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 切换下一首音乐，验证音乐切换成功
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 点击我的音乐库 ... skipped in 0.000s
+    当 < 播放本地指定音乐 ... skipped in 0.000s
+      | music_name |
+      | 李白         |
+    当 < 切换下一首音乐 ... skipped in 0.000s
+    那么 < 验证音乐名称不一致 ... skipped in 0.000s
+      | chk_music_name |
+      | 李白             |
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="清空音乐搜索框并取消回到主界面" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @clearTest
+  场景: 清空音乐搜索框并取消回到主界面
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 打开音乐搜索 ... skipped in 0.000s
+    当 < 根据关键字搜索网络音乐 ... skipped in 0.000s
+      | key_word |
+      | 无心睡眠     |
+    那么 < 验证音乐搜索框内容 ... skipped in 0.000s
+      | chk_key_word |
+      | 无心睡眠         |
+    当 < 清空音乐搜索框 ... skipped in 0.000s
+    那么 < 验证音乐搜索框内容 ... skipped in 0.000s
+      | chk_key_word |
+      | 搜索           |
+    当 < 取消音乐搜索 ... skipped in 0.000s
+    那么 < 验证当前为音乐主界面 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="打开并播放今日歌单中的歌曲，校验歌曲正常播放" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @smart_music_test
+  场景: 打开并播放今日歌单中的歌曲，校验歌曲正常播放
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 打开今日歌单 ... skipped in 0.000s
+    当 < 随机播放今日歌单 ... skipped in 0.000s
+      | o_result |
+      | o_ret    |
+    那么 < 验证音乐名称一致 ... skipped in 0.000s
+      | chk_music_name |
+      | o_ret          |
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="校验听ta的歌的歌手是否一致" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @tata
+  场景: 校验听ta的歌的歌手是否一致
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 点击我的音乐库 ... skipped in 0.000s
+    当 < 播放本地指定音乐 ... skipped in 0.000s
+      | music_name |
+      | 离开         |
+    当 < 打开音乐列表 ... skipped in 0.000s
+    那么 < 验证听ta的歌是否一致 ... skipped in 0.000s
+      | chk_artist |
+      | 野孩子        |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="随机播放网络音乐，验证网络音乐播放正常，放音通道正确" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @netMusicTest
+  场景: 随机播放网络音乐，验证网络音乐播放正常，放音通道正确
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 打开酷我音乐 ... skipped in 0.000s
+    当 < 随机播放网络音乐 ... skipped in 0.000s
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+    那么 < 验证放音通道一致 ... skipped in 0.000s
+      | chk_tinymix     |
+      | ASP MEDIA Route |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="播放FLAC格式的音乐，验证音乐放音通道正常" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 播放FLAC格式的音乐，验证音乐放音通道正常
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 点击我的音乐库 ... skipped in 0.000s
+    当 < 播放本地指定音乐 ... skipped in 0.000s
+      | music_name |
+      | 大地         |
+    那么 < 验证音乐名称一致 ... skipped in 0.000s
+      | chk_music_name |
+      | 大地             |
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+    那么 < 验证放音通道一致 ... skipped in 0.000s
+      | chk_tinymix     |
+      | ASP MEDIA Route |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="播放APE格式的音乐，验证音乐放音通道正常" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @APE_musci_test
+  场景: 播放APE格式的音乐，验证音乐放音通道正常
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 点击我的音乐库 ... skipped in 0.000s
+    当 < 播放本地指定音乐 ... skipped in 0.000s
+      | music_name  |
+      | 叶振棠-万里长城永不倒 |
+    那么 < 验证音乐名称一致 ... skipped in 0.000s
+      | chk_music_name |
+      | 叶振棠-万里长城永不倒    |
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+    那么 < 验证放音通道一致 ... skipped in 0.000s
+      | chk_tinymix     |
+      | ASP MEDIA Route |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="播放OGG格式的音乐，验证音乐放音通道正常" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @oggTest
+  场景: 播放OGG格式的音乐，验证音乐放音通道正常
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 点击我的音乐库 ... skipped in 0.000s
+    当 < 播放本地指定音乐 ... skipped in 0.000s
+      | music_name     |
+      | 信仰_张信哲_new_ogg |
+    那么 < 验证音乐名称一致 ... skipped in 0.000s
+      | chk_music_name |
+      | 信仰_张信哲_new_ogg |
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+    那么 < 验证放音通道一致 ... skipped in 0.000s
+      | chk_tinymix     |
+      | ASP MEDIA Route |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="播放WAV格式的音乐，验证音乐放音通道正常" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @wavTest
+  场景: 播放WAV格式的音乐，验证音乐放音通道正常
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 点击我的音乐库 ... skipped in 0.000s
+    当 < 播放本地指定音乐 ... skipped in 0.000s
+      | music_name |
+      | Alone      |
+    那么 < 验证音乐名称一致 ... skipped in 0.000s
+      | chk_music_name |
+      | Alone          |
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+    那么 < 验证放音通道一致 ... skipped in 0.000s
+      | chk_tinymix     |
+      | ASP MEDIA Route |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="播放AWB格式的音乐，验证音乐放音通道正常" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @awbTest
+  场景: 播放AWB格式的音乐，验证音乐放音通道正常
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 点击我的音乐库 ... skipped in 0.000s
+    当 < 播放本地指定音乐 ... skipped in 0.000s
+      | music_name  |
+      | 爱的供养_杨幂_awb |
+    那么 < 验证音乐名称一致 ... skipped in 0.000s
+      | chk_music_name |
+      | 爱的供养_杨幂_awb    |
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+    那么 < 验证放音通道一致 ... skipped in 0.000s
+      | chk_tinymix     |
+      | ASP MEDIA Route |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="播放MP3128kps格式的音乐，验证音乐放音通道正常" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @mp3128kpsTest
+  场景: 播放MP3128kps格式的音乐，验证音乐放音通道正常
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 点击我的音乐库 ... skipped in 0.000s
+    当 < 播放本地指定音乐 ... skipped in 0.000s
+      | music_name |
+      | 3D低频火花     |
+    那么 < 验证音乐名称一致 ... skipped in 0.000s
+      | chk_music_name |
+      | 3D低频火花         |
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+    那么 < 验证放音通道一致 ... skipped in 0.000s
+      | chk_tinymix     |
+      | ASP MEDIA Route |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="播放MP3320kps格式的音乐，验证音乐放音通道正常" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @mp3320kpsTest
+  场景: 播放MP3320kps格式的音乐，验证音乐放音通道正常
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 点击我的音乐库 ... skipped in 0.000s
+    当 < 播放本地指定音乐 ... skipped in 0.000s
+      | music_name |
+      | 吉拉拉        |
+    那么 < 验证音乐名称一致 ... skipped in 0.000s
+      | chk_music_name |
+      | 吉拉拉            |
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+    那么 < 验证放音通道一致 ... skipped in 0.000s
+      | chk_tinymix     |
+      | ASP MEDIA Route |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="播放AMR格式的音乐，验证音乐放音通道正常" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @amrTest
+  场景: 播放AMR格式的音乐，验证音乐放音通道正常
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 点击我的音乐库 ... skipped in 0.000s
+    当 < 播放本地指定音乐 ... skipped in 0.000s
+      | music_name |
+      | 独角戏amr     |
+    那么 < 验证音乐名称一致 ... skipped in 0.000s
+      | chk_music_name |
+      | 独角戏amr         |
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+    那么 < 验证放音通道一致 ... skipped in 0.000s
+      | chk_tinymix     |
+      | ASP MEDIA Route |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="播放WMA格式的音乐，验证音乐放音通道正常" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @wmaTest
+  场景: 播放WMA格式的音乐，验证音乐放音通道正常
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 点击我的音乐库 ... skipped in 0.000s
+    当 < 播放本地指定音乐 ... skipped in 0.000s
+      | music_name |
+      | 那一天        |
+    那么 < 验证音乐名称一致 ... skipped in 0.000s
+      | chk_music_name |
+      | 那一天            |
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+    那么 < 验证放音通道一致 ... skipped in 0.000s
+      | chk_tinymix     |
+      | ASP MEDIA Route |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="播放M4A格式的音乐，验证音乐放音通道正常" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @m4aTest
+  场景: 播放M4A格式的音乐，验证音乐放音通道正常
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 点击我的音乐库 ... skipped in 0.000s
+    当 < 播放本地指定音乐 ... skipped in 0.000s
+      | music_name     |
+      | 信仰_张信哲_new_m4a |
+    那么 < 验证音乐名称一致 ... skipped in 0.000s
+      | chk_music_name |
+      | 信仰_张信哲_new_m4a |
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+    那么 < 验证放音通道一致 ... skipped in 0.000s
+      | chk_tinymix     |
+      | ASP MEDIA Route |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="播放ACC格式的音乐，验证音乐放音通道正常" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @accTest
+  场景: 播放ACC格式的音乐，验证音乐放音通道正常
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 点击我的音乐库 ... skipped in 0.000s
+    当 < 播放本地指定音乐 ... skipped in 0.000s
+      | music_name   |
+      | one_time_aac |
+    那么 < 验证音乐名称一致 ... skipped in 0.000s
+      | chk_music_name |
+      | one_time_aac   |
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+    那么 < 验证放音通道一致 ... skipped in 0.000s
+      | chk_tinymix     |
+      | ASP MEDIA Route |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="验证U盘音乐数量" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @usb_cnt_Test
+  场景: 验证U盘音乐数量
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 点击我的音乐库 ... skipped in 0.000s
+    那么 < 验证U盘音乐数量 ... skipped in 0.000s
+      | chk_usb_cnt |
+      | 3           |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="播放U盘音乐,验证放音通道一致" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @usb_play_Test
+  场景: 播放U盘音乐,验证放音通道一致
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 点击我的音乐库 ... skipped in 0.000s
+    当 < 播放U盘音乐 ... skipped in 0.000s
+    那么 < 验证当前为U盘音乐 ... skipped in 0.000s
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+    那么 < 验证放音通道一致 ... skipped in 0.000s
+      | chk_tinymix     |
+      | ASP MEDIA Route |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="播放U盘音乐下一首，验证下一首为U盘音乐" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @usb_next_Test
+  场景: 播放U盘音乐下一首，验证下一首为U盘音乐
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 点击我的音乐库 ... skipped in 0.000s
+    当 < 播放U盘音乐 ... skipped in 0.000s
+    当 < 切换下一首音乐 ... skipped in 0.000s
+    那么 < 验证当前为U盘音乐 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="播放U盘音乐上一首，验证上一首为U盘音乐" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @usb_prev_Test
+  场景: 播放U盘音乐上一首，验证上一首为U盘音乐
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 点击我的音乐库 ... skipped in 0.000s
+    当 < 播放U盘音乐 ... skipped in 0.000s
+    当 < 切换上一首音乐 ... skipped in 0.000s
+    那么 < 验证当前为U盘音乐 ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="播放音乐下一首再切换上一首，验证音乐回到之前音乐" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @prev_next_test
+  场景: 播放音乐下一首再切换上一首，验证音乐回到之前音乐
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 获取当前音乐名称 ... skipped in 0.000s
+      | o_result |
+      | o_name   |
+    当 < 切换下一首音乐 ... skipped in 0.000s
+    那么 < 验证音乐名称不一致 ... skipped in 0.000s
+      | chk_music_name |
+      | o_name         |
+    当 < 切换上一首音乐 ... skipped in 0.000s
+    那么 < 验证音乐名称一致 ... skipped in 0.000s
+      | chk_music_name |
+      | o_name         |
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="播放音乐过程中，唤醒IVOKA，ivoka还在播报中 验证音乐播放状态" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @audio_voice_test
+  场景: 播放音乐过程中，唤醒IVOKA，ivoka还在播报中 验证音乐播放状态
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 点击我的音乐库 ... skipped in 0.000s
+    当 < 播放本地指定音乐 ... skipped in 0.000s
+      | music_name |
+      | 李白         |
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+    当 < 播放音频文件 ... skipped in 0.000s
+      | voice_file |
+      | 你好语音助理.m4a |
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | false      |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="网络音乐切换到蓝牙音乐再切换到网络音乐--音乐界面错误" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @today_bluetooth_today_test
+  场景: 网络音乐切换到蓝牙音乐再切换到网络音乐--音乐界面错误
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 打开今日歌单 ... skipped in 0.000s
+    当 < 随机播放今日歌单 ... skipped in 0.000s
+      | o_result |
+      | o_ret    |
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+    当 < 点击我的音乐库 ... skipped in 0.000s
+    当 < 播放蓝牙音乐 ... skipped in 0.000s
+    当 < 延时 ... skipped in 0.000s
+      | sleep_time |
+      | 30         |
+    那么 < 验证音乐名称不一致 ... skipped in 0.000s
+      | chk_music_name |
+      | o_ret          |
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+    当 < 打开今日歌单 ... skipped in 0.000s
+    当 < 随机播放今日歌单 ... skipped in 0.000s
+      | o_result |
+      | o_ret    |
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+    那么 < 验证音乐名称一致 ... skipped in 0.000s
+      | chk_music_name |
+      | o_ret          |
+    那么 < 验证放音通道一致 ... skipped in 0.000s
+      | chk_tinymix     |
+      | ASP MEDIA Route |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="倒车下音乐静音，倒车结束，音乐恢复，播放状态为播放" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @back_car_test
+  场景: 倒车下音乐静音，倒车结束，音乐恢复，播放状态为播放
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 点击我的音乐库 ... skipped in 0.000s
+    当 < 播放本地指定音乐 ... skipped in 0.000s
+      | music_name |
+      | 李白         |
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+    当 < 获取MEDIA音量 ... skipped in 0.000s
+      | o_result |
+      | o_volume |
+    当 < 开始倒车 ... skipped in 0.000s
+    当 < 延时 ... skipped in 0.000s
+      | sleep_time |
+      | 25         |
+    那么 < 验证MEDIA音量一致 ... skipped in 0.000s
+      | chk_volume |
+      | 0          |
+    当 < 结束倒车 ... skipped in 0.000s
+    那么 < 验证MEDIA音量一致 ... skipped in 0.000s
+      | chk_volume |
+      | o_volume   |
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="播放网络音乐时，经常歌曲没有播放完就自动跳歌" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @net_audio_skip_test
+  场景: 播放网络音乐时，经常歌曲没有播放完就自动跳歌
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 打开今日歌单 ... skipped in 0.000s
+    当 < 随机播放今日歌单 ... skipped in 0.000s
+      | o_result |
+      | o_ret    |
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+    当 < 等待音乐播放即将结束 ... skipped in 0.000s
+    那么 < 验证音乐名称一致 ... skipped in 0.000s
+      | chk_music_name |
+      | o_ret          |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.testcase_audio.IPDA音乐的相关功能验证" name="播放U盘音乐,拔出U盘，再插上U盘" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  场景: 播放U盘音乐,拔出U盘，再插上U盘
+    当 < 打开音乐应用 ... skipped in 0.000s
+    当 < 点击我的音乐库 ... skipped in 0.000s
+    当 < 播放U盘音乐 ... skipped in 0.000s
+    那么 < 验证当前为U盘音乐 ... skipped in 0.000s
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+    当 < 拔出U盘 ... skipped in 0.000s
+    那么 < 验证U盘已拔出 ... skipped in 0.000s
+    当 < 插上U盘 ... skipped in 0.000s
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+    那么 < 验证放音通道一致 ... skipped in 0.000s
+      | chk_tinymix     |
+      | ASP MEDIA Route |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

@@ -1,0 +1,23 @@
+<testsuite errors="0" failures="0" name="features.testcase_ivoka.对语音功能的验证" skipped="1" tests="1" time="0.0"><testcase classname="features.testcase_ivoka.对语音功能的验证" name="ivoka我要听时间都去哪儿了，跳转到网络音乐，但是停止状态，手动点一下才播放" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+
+  @ivoka_audio_test
+  场景: ivoka我要听时间都去哪儿了，跳转到网络音乐，但是停止状态，手动点一下才播放
+    当 < ivoka唤醒应用 ... skipped in 0.000s
+      | voice_name     |
+      | 我要听时间都去哪儿了.m4a |
+    那么 < 验证音乐名称一致 ... skipped in 0.000s
+      | chk_music_name |
+      | 时间都去哪儿了        |
+    那么 < 验证音乐是否播放 ... skipped in 0.000s
+      | is_playing |
+      | true       |
+    那么 < 验证放音通道一致 ... skipped in 0.000s
+      | chk_tinymix     |
+      | ASP MEDIA Route |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>
