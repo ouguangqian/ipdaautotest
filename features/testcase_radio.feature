@@ -9,12 +9,12 @@
       @radio_special_test @part1
     场景: 播放FM收音机节目并验证节目的正确性
         当< 打开FM_AM选择界面
-        当< 播放指定FM节目
-          |fm_no|
-          |97.5 |
+        当< 随机播放FM节目
+          |o_result|
+          |o_fm_no|
         那么< 验证播放的FM编号一致
           |chk_fm_no|
-          |97.5     |
+          |o_fm_no     |
  @part1
     场景: 切换上一首，然后下一首后 验证收音机恢复到原来节目
         当< 打开FM_AM选择界面
@@ -32,15 +32,15 @@
       @previewTest @part1
     场景: 预览所有电台并选中一个收听，验证当前播放的为选中的电台
         当< 打开FM_AM选择界面
-        当< 播放指定FM节目
-          |fm_no|
-          |97.5 |
+        当< 随机播放FM节目
+          |o_result|
+          |o_fm_no1|
         当< 预览电台并随机收听
           |o_result|
           |o_fm_no |
         那么< 验证两个对象值
           |param1|option|param2|
-          |97.5|!=|o_fm_no|
+          |o_fm_no1|!=|o_fm_no|
         那么< 验证放音通道一致
           |chk_tinymix|
           |ASP RADIO Route|
@@ -48,26 +48,26 @@
         @favTest @part1
     场景: 收藏FM电台并验证收藏记录，取消收藏
         当< 打开FM_AM选择界面
-        当< 播放指定FM节目
-          |fm_no|
-          |97.5 |
+        当< 随机播放FM节目
+          |o_result|
+          |o_fm_no|
         当< 收藏或取消收藏电台
         当< 打开FM_AM选择界面
         那么< 验证FM是否被收藏
           |chk_fm_no|chk_is_faved|
-          |97.5     |true        |
+          |o_fm_no     |true        |
         当< 收藏或取消收藏电台
         当< 打开FM_AM选择界面
         那么< 验证FM是否被收藏
           |chk_fm_no|chk_is_faved|
-          |97.5     |false        |
+          |o_fm_no     |false        |
     @playFavedTest @part1
     场景: 播放已经收藏的电台,验证是否播放指定的电台和播放状态
 #      收藏电台
         当< 打开FM_AM选择界面
-        当< 播放指定FM节目
-          |fm_no|
-          |97.5 |
+        当< 随机播放FM节目
+          |o_result|
+          |o_fm_no|
         当< 收藏或取消收藏电台
 #      选择收藏的电台播放
         当< 切换下一台
@@ -75,7 +75,7 @@
         当< 播放已经收藏的电台
         那么< 验证播放的FM编号一致
           |chk_fm_no|
-          |97.5     |
+          |o_fm_no     |
         那么< 验证电台是否播放
           |chk_is_playing|
           |true          |
@@ -278,9 +278,9 @@
         @radioAudio @part2
     场景: radio->audio
       当< 打开FM_AM选择界面
-      当< 播放指定FM节目
-          |fm_no|
-          |97.5 |
+      当< 随机播放FM节目
+          |o_result|
+          |o_fm_no|
       那么< 验证电台是否播放
           |chk_is_playing|
           |true          |
@@ -326,9 +326,9 @@
       @his_played_test @part2
     场景: 随机选择网络回听节目，并验证节目名称
         当< 打开FM_AM选择界面
-        当< 播放指定FM节目
-            |fm_no|
-            |97.5 |
+        当< 随机播放FM节目
+          |o_result|
+          |o_fm_no|
         当< 打开电台节目列表
         当< 随机播放网络回听节目
             |o_result|
