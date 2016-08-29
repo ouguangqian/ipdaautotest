@@ -2,54 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d84b4feb-f386-4262-87a3-8b20bf821900" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/support/utf7ime4py.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/actions/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/actions/audio.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/actions/common.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/actions/gesture.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/actions/ivoka.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/actions/launcher.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/actions/navi.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/actions/phone.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/actions/qplay.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/actions/radio.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/actions/systemsetting.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/actions/test.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/actions/video.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/environment.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/testcase_audio.feature" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/testcase_ivoka.feature" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/testcase_navi.feature" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/testcase_other.feature" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/testcase_radio.feature" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/testcase_video.feature" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resultReport/TESTS-features.testcase_audio.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resultReport/TESTS-features.testcase_ivoka.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resultReport/TESTS-features.testcase_navi.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resultReport/TESTS-features.testcase_other.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resultReport/TESTS-features.testcase_radio.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resultReport/TESTS-features.testcase_video.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/perform_test.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/procrank.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/procranktest.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/steps/step_audio.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/steps/step_common.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/steps/step_gesture.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/steps/step_ivoka.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/steps/step_launcher.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/steps/step_navi.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/steps/step_other.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/steps/step_phone.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/steps/step_radio.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/steps/step_sysSetting.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/steps/step_video.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/support/config.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/support/global_vars.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/support/reboot.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/support/testThreading.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/support/time_mode.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/utils/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/utils/utils.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/features/testcase_radio.feature" afterPath="$PROJECT_DIR$/features/testcase_radio.feature" />
     </list>
     <ignored path="autotestplat.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -82,26 +36,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="testcase_audio.feature" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/features/testcase_audio.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12324">
-              <caret line="474" column="21" selection-start-line="474" selection-start-column="20" selection-end-line="474" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ivoka.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/actions/ivoka.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="650">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="step_ivoka.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/steps/step_ivoka.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -112,21 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="step_audio.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/steps/step_audio.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="testcase_ivoka.feature" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/features/testcase_ivoka.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="1167" column="16" selection-start-line="1167" selection-start-column="9" selection-end-line="1167" selection-end-column="16" />
+            <state relative-caret-position="30342">
+              <caret line="1167" column="16" selection-start-line="357" selection-start-column="8" selection-end-line="359" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -135,18 +59,38 @@
       <file leaf-file-name="step_common.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/steps/step_common.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
+            <state relative-caret-position="468">
               <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="common.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/actions/common.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
+            <state relative-caret-position="1768">
               <caret line="83" column="17" selection-start-line="83" selection-start-column="17" selection-end-line="83" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="perform_test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/perform_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2860">
+              <caret line="113" column="31" selection-start-line="113" selection-start-column="31" selection-end-line="113" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="procrank.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/procrank.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -155,18 +99,28 @@
       <file leaf-file-name="testcase_navi.feature" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/features/testcase_navi.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1508">
-              <caret line="58" column="21" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
+            <state relative-caret-position="192">
+              <caret line="148" column="17" selection-start-line="148" selection-start-column="11" selection-end-line="148" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testcase_other.feature" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/features/testcase_other.feature">
+      <file leaf-file-name="step_navi.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/steps/step_navi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="384">
+              <caret line="176" column="34" selection-start-line="176" selection-start-column="34" selection-end-line="176" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navi.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/actions/navi.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="161" column="11" selection-start-line="161" selection-start-column="11" selection-end-line="161" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -175,8 +129,8 @@
       <file leaf-file-name="testcase_radio.feature" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/features/testcase_radio.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7488">
-              <caret line="288" column="16" selection-start-line="288" selection-start-column="16" selection-end-line="288" selection-end-column="16" />
+            <state relative-caret-position="244">
+              <caret line="66" column="22" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -234,12 +188,12 @@
         <option value="$PROJECT_DIR$/steps/step_common.py" />
         <option value="$PROJECT_DIR$/steps/step_radio.py" />
         <option value="$PROJECT_DIR$/steps/step_navi.py" />
-        <option value="$PROJECT_DIR$/features/testcase_radio.feature" />
         <option value="$PROJECT_DIR$/steps/step_audio.py" />
         <option value="$PROJECT_DIR$/features/testcase_audio.feature" />
         <option value="$PROJECT_DIR$/actions/ivoka.py" />
         <option value="$PROJECT_DIR$/steps/step_ivoka.py" />
         <option value="$PROJECT_DIR$/features/testcase_ivoka.feature" />
+        <option value="$PROJECT_DIR$/features/testcase_radio.feature" />
       </list>
     </option>
   </component>
@@ -252,7 +206,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
     <option name="y" value="52" />
-    <option name="width" value="1785" />
+    <option name="width" value="1765" />
     <option name="height" value="1028" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -302,7 +256,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -345,13 +299,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="autotestplat2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="autotestplat2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="resultReport" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="autotestplat2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="autotestplat2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="features" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -710,10 +692,10 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="52" width="1785" height="1028" extended-state="4" />
+    <frame x="65" y="52" width="1765" height="1028" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1535014" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1529745" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33053514" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -862,20 +844,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/perform_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3172">
-          <caret line="125" column="29" selection-start-line="125" selection-start-column="29" selection-end-line="125" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/procrank.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/actions/phone.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2288">
@@ -887,14 +855,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1612">
           <caret line="75" column="27" selection-start-line="75" selection-start-column="27" selection-end-line="75" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/actions/navi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4836">
-          <caret line="189" column="29" selection-start-line="189" selection-start-column="29" selection-end-line="189" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -944,7 +904,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-597">
           <caret line="158" column="19" selection-start-line="158" selection-start-column="19" selection-end-line="158" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -952,7 +911,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="9" column="14" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -960,15 +918,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
           <caret line="33" column="17" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/steps/step_navi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="223" column="9" selection-start-line="223" selection-start-column="9" selection-end-line="223" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -976,7 +925,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-286">
           <caret line="8" column="21" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -984,7 +932,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
           <caret line="15" column="18" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -992,7 +939,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="17" column="14" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1000,7 +946,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4134">
           <caret line="165" column="40" selection-start-line="165" selection-start-column="40" selection-end-line="165" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1008,15 +953,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6318">
           <caret line="243" column="21" selection-start-line="241" selection-start-column="6" selection-end-line="243" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/features/testcase_radio.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7488">
-          <caret line="288" column="16" selection-start-line="288" selection-start-column="16" selection-end-line="288" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1024,15 +960,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="598">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/features/testcase_navi.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1508">
-          <caret line="58" column="21" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1070,15 +997,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/features/testcase_ivoka.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="1167" column="16" selection-start-line="1167" selection-start-column="9" selection-end-line="1167" selection-end-column="16" />
+        <state relative-caret-position="30342">
+          <caret line="1167" column="16" selection-start-line="357" selection-start-column="8" selection-end-line="359" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/steps/step_common.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
+        <state relative-caret-position="468">
           <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
           <folding />
         </state>
@@ -1086,8 +1013,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/actions/common.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
+        <state relative-caret-position="1768">
           <caret line="83" column="17" selection-start-line="83" selection-start-column="17" selection-end-line="83" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/perform_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2860">
+          <caret line="113" column="31" selection-start-line="113" selection-start-column="31" selection-end-line="113" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/procrank.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/testcase_radio.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="66" column="22" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/testcase_navi.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="148" column="17" selection-start-line="148" selection-start-column="11" selection-end-line="148" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steps/step_navi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="176" column="34" selection-start-line="176" selection-start-column="34" selection-end-line="176" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/actions/navi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="161" column="11" selection-start-line="161" selection-start-column="11" selection-end-line="161" selection-end-column="11" />
           <folding />
         </state>
       </provider>
