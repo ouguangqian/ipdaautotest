@@ -496,7 +496,7 @@
           |chk_tinymix|
           |ASP MEDIA Route|
 
-      @bluetooth_music_test
+      @bluetooth_music_test @ignore
     场景: 播放蓝牙音乐
         当< 打开我的音乐库
         当< 播放本地指定音乐

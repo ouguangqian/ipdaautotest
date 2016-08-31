@@ -381,10 +381,12 @@
           |chk_fm_no|
           |o_fm_no     |
         那么< 验证电台是否播放
+        |chk_is_playing|
+        |true         |
 
 
     @ivoka_radio_prev_test
-    场景: 语音下一首换台收音机
+    场景: 语音上一首换台收音机
         当< 打开收音机应用
         当< 打开FM_AM选择界面
         当< 随机播放FM节目
@@ -971,7 +973,7 @@
     场景: 验证主界面元素是否正确 主要时间，温度，欢迎语
         那么< 验证主界面元素
 
-        @ivoka_bluetooth_test
+        @ivoka_bluetooth_test @ignore
     场景: 语音我要听蓝牙音乐
         当< 打开我的音乐库
         当< 播放本地指定音乐

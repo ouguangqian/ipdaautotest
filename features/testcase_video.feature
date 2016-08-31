@@ -26,7 +26,7 @@
           |chk_app_name|
           |视频     |
 
-        @video_call_test
+        @video_call_test @ignore
     场景: 视频播放中，拨号10086后，系统弹出“NetVideoUI无响应”显示
         当< 打开九宫格界面
         当< 打开视频应用

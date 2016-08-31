@@ -2,7 +2,7 @@
 
 功能: 导航功能验证
 
-  @bluetooth_navi_test
+  @bluetooth_navi_test @ignore
     场景: 后台播放收音机，连接蓝牙后，回到主页点击导航，导航出现CRASH
         当< 断开蓝牙连接
         当< 回到系统主界面
