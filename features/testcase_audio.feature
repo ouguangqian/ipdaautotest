@@ -400,6 +400,9 @@
         当< 播放音频文件
           |voice_file|
           |你好语音助理.m4a|
+        当< 延时
+          |sleep_time|
+          |1         |
         那么< 验证音乐是否播放
           |is_playing|
           |false     |

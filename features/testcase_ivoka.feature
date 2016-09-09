@@ -93,9 +93,9 @@
       那么< 验证当前应用
           |chk_app_name|
           |音乐|
-      那么< 验证歌手名字一致
-          |chk_artist|
-          |刘德华        |
+      那么< 验证当前界面包含文本
+          |contains_txt|
+          |刘德华   |
       那么< 验证音乐是否播放
           |is_playing|
           |true     |

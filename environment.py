@@ -66,11 +66,11 @@ def before_scenario(context, scenario):
     t = threading.Thread(target=Utils().get_top_info_to_file,args = (sce_name,))
     t.setDaemon(True)
     t.start()
-    # print('开始记录logcat日志信息')
-    # global t_logcat
-    # t_logcat = threading.Thread(target=Utils().logcat_to_file, args=(sce_name,))
-    # t_logcat.setDaemon(True)
-    # t_logcat.start()
+    print('开始记录logcat日志信息')
+    global t_logcat
+    t_logcat = threading.Thread(target=Utils().logcat_to_file, args=(sce_name,))
+    t_logcat.setDaemon(True)
+    t_logcat.start()
     print('执行场景前处理，回到主界面')
     try:
         Common().back_to_launcher()
@@ -96,19 +96,19 @@ def after_scenario(context, scenario):
     try:
         t._stop()
         t.join()
-        # Utils().send_logcat_flag(status)
-        # t_logcat._stop()
-        # t_logcat.join()
+        Utils().send_logcat_flag(status)
+        t_logcat._stop()
+        t_logcat.join()
     except Exception as e:
         print(e)
     finally:
-        # if not 'passed' == status:
-        #     png_name = Utils().take_screenshot()
-        #
-        #     if Utils().crash_handler():
-        #         print('应用crash，请参考截图信息: http://10.10.99.27:9000/' + time.strftime('%Y%m%d') + '/screenshots/' + png_name ) # + ' 和:  http://10.10.99.87:9000/' + time.strftime('%Y%m%d') + '/' + sce_name + '.log' + ' 对应场景日志信息 ')
-        #     else:
-        #         print('用例运行失败，请参考截图信息: http://10.10.99.27:9000/' + time.strftime('%Y%m%d')+ '/screenshots/' + png_name ) # + ' 和:  http://10.10.99.87:9000/' + time.strftime('%Y%m%d') + '/' + sce_name + '.log' + ' 对应场景日志信息 ')
+        if not 'passed' == status:
+            png_name = Utils().take_screenshot()
+
+            if Utils().crash_handler():
+                print('应用crash，请参考截图信息: http://10.10.99.30:9000/' + time.strftime('%Y%m%d') + '/screenshots/' + png_name   + ' 和:  http://10.10.99.87:9000/' + time.strftime('%Y%m%d') + '/' + sce_name + '.log' + ' 对应场景日志信息 ')
+            else:
+                print('用例运行失败，请参考截图信息: http://10.10.99.30:9000/' + time.strftime('%Y%m%d') + '/screenshots/' + png_name  + ' 和:  http://10.10.99.87:9000/' + time.strftime('%Y%m%d') + '/' + sce_name + '.log' + ' 对应场景日志信息 ')
         print('场景《' + sce_name + '》执行结束！')
     # if scenario.status == 'passed':
     #     Utils().del_logcat_file(sce_name + '.log')

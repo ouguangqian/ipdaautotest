@@ -5,6 +5,8 @@ import socket
 import subprocess
 import time
 import math
+
+import sys
 from PIL import Image
 import operator
 from functools import reduce
@@ -232,8 +234,8 @@ class Utils:
         s.listen(10)
         # 开始记录日志
         os.popen(log_cmd + ' -c ')
-
-        p = subprocess.Popen(log_cmd, stdout=open(log_path, 'w'), shell=True, stderr=subprocess.PIPE)
+        file_logcat = open(log_path, 'w', encoding='utf-8')
+        p = subprocess.Popen(log_cmd, stdout=file_logcat, shell=True, stderr=subprocess.PIPE)
 
         while True:
             print('waiting for connection...')
@@ -244,13 +246,20 @@ class Utils:
                 data = cs.recv(1024).decode()
                 print('accept data is: %s' %(data,))
                 # p.terminate()
-                p.kill()
+                if sys.platform == 'linux':
+                    print(str(p.pid) + '=====================')
+                    subprocess.call('kill -9 ' + str(p.pid), shell=True)
+                else:
+                    subprocess.call('taskkill /F /pid ' + str(p.pid))
+                # p.kill()
                 # time.sleep(10)
                 # if 'passed' == data:
                 #     os.remove(log_path)
                 break
             cs.close()
             break
+        # 文件关闭
+        file_logcat.close()
         s.close()
 
     # 发送记录日志操作
