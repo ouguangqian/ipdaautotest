@@ -247,7 +247,6 @@ class Utils:
                 print('accept data is: %s' %(data,))
                 # p.terminate()
                 if sys.platform == 'linux':
-                    print(str(p.pid) + '=====================')
                     subprocess.call('kill -9 ' + str(p.pid), shell=True)
                 else:
                     subprocess.call('taskkill /F /pid ' + str(p.pid))
