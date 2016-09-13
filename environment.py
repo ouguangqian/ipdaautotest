@@ -62,6 +62,8 @@ def before_scenario(context, scenario):
     print('=' * 60)
     print('场景《' + sce_name + '》开始执行！')
     print('开始记录CPU信息 >>>')
+    print('清空上下文数据')
+    Utils().clear_context_map()
     global t
     t = threading.Thread(target=Utils().get_top_info_to_file,args = (sce_name,))
     t.setDaemon(True)
@@ -81,8 +83,7 @@ def before_scenario(context, scenario):
         else:
             print('回到主界面异常输出：')
             print(e)
-    print('清空上下文数据')
-    Utils().clear_context_map()
+
     print('场景前处理执行结束')
     # print('启动crash监听')
     # Common().on_crash_handler()
@@ -94,14 +95,29 @@ def after_scenario(context, scenario):
     sce_name = scenario.name
     status = scenario.status
     try:
-        t._stop()
-        t.join()
-        Utils().send_logcat_flag(status)
-        t_logcat._stop()
-        t_logcat.join()
+        Utils().send_logcat_flag()
     except Exception as e:
         print(e)
     finally:
+        loop = 0
+        while t.is_alive() and loop < 5:
+            try:
+                t._stop()
+                t.join()
+            except:
+                pass
+            finally:
+                time.sleep(3)
+                loop += 1
+        print(t.is_alive())
+
+        print("检查线程状态")
+        print(t_logcat.is_alive())
+        t_logcat._stop()
+        t_logcat.join()
+        print("检查线程是否停止")
+        print(t_logcat._is_stopped)
+
         if not 'passed' == status:
             png_name = Utils().take_screenshot()
 
