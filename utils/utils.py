@@ -248,8 +248,33 @@ class Utils:
                 # p.terminate()
                 if sys.platform == 'linux':
                     subprocess.call('kill -9 ' + str(p.pid), shell=True)
+                    ret = subprocess.Popen('ps -ef | grep logcat', stdout=subprocess.PIPE,
+                                           shell=True).stdout.readlines()
+                    for r in ret:
+                        r = r.decode().strip()
+                        print(r)
+                        while '  ' in r:
+                            r = r.replace('  ', ' ')
+                        rlist = r.split(' ')
+                        pid = rlist[1]
+                        try:
+                            subprocess.call('kill -9 ' + pid, shell=True)
+                        except:
+                            pass
                 else:
-                    subprocess.call('taskkill /F /pid ' + str(p.pid))
+                    subprocess.call('taskkill /F /pid ' + str(p.pid), shell=True)
+                ret = subprocess.Popen('tasklist -V | findstr logcat', stdout=subprocess.PIPE,
+                                       shell=True).stdout.readlines()
+                for r in ret:
+                    r = r.decode().strip()
+                    while '  ' in r:
+                        r = r.replace('  ', ' ')
+                    rlist = r.split(' ')
+                    pid = rlist[1]
+                    try:
+                        subprocess.call('taskkill /T /F /pid ' + pid, shell=True)
+                    except:
+                        pass
                 # p.kill()
                 # time.sleep(10)
                 # if 'passed' == data:
