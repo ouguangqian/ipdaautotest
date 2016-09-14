@@ -121,18 +121,11 @@ class Utils:
 
         command = 'adb devices'
 
-        res = os.popen(command).read()
+        res = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True).stdout.readlines()
 
-        for s in res.split('\n'):
-            # 跳过第一行
-            if s.__contains__('devices'):
-                continue
+        for s in res:
+            s = s.decode().strip()
 
-            # if s.__contains__('device'):
-            #     serial = str(s.replace('device','').replace(' ','')).strip()
-            #
-            #     if serial.__eq__(serial_num):
-            #         return True
             if serial_num in s:
                 return True
         return False
@@ -238,100 +231,22 @@ class Utils:
         file_logcat = open(log_path, 'w', encoding='utf-8')
 
 
-        p_logcat = subprocess.Popen(log_cmd, stdout=file_logcat, shell=True, stderr=subprocess.PIPE)
+        p_logcat = subprocess.Popen(log_cmd, stdout=file_logcat, stderr=subprocess.PIPE)
         self.set_context_map('file_logcat', file_logcat)
         self.set_context_map('p_logcat', p_logcat)
-# '''
-#         while True:
-#             print('waiting for connection...')
-#             cs, ca = s.accept()
-#             print('connected from %s' %(ca,))
-#
-#             while True:
-#                 data = cs.recv(1024).decode()
-#                 print('accept data is: %s' %(data,))
-#                 # p.terminate()
-#                 if sys.platform == 'linux':
-#                     subprocess.call('kill -9 ' + str(p.pid), shell=True)
-#                     ret = subprocess.Popen('ps -ef | grep logcat', stdout=subprocess.PIPE,shell=True).stdout.readlines()
-#                     for r in ret:
-#                         r = r.decode().strip()
-#                         print(r)
-#                         while '  ' in r:
-#                             r = r.replace('  ', ' ')
-#                         rlist = r.split(' ')
-#                         pid = rlist[1]
-#                         try:
-#                             subprocess.call('kill -9 ' + pid, shell=True)
-#                         except:
-#                             pass
-#                 else:
-#                     subprocess.call('taskkill /F /pid ' + str(p.pid), shell=True)
-#                     ret = subprocess.Popen('tasklist -V | findstr logcat', stdout=subprocess.PIPE,shell=True).stdout.readlines()
-#                     for r in ret:
-#                         r = r.decode().strip()
-#                         while '  ' in r:
-#                             r = r.replace('  ', ' ')
-#                         rlist = r.split(' ')
-#                         pid = rlist[1]
-#                         try:
-#                             subprocess.call('taskkill /T /F /pid ' + pid, shell=True)
-#                         except:
-#                             pass
-#                 # p.kill()
-#                 # time.sleep(10)
-#                 # if 'passed' == data:
-#                 #     os.remove(log_path)
-#                 break
-#             cs.close()
-#             break
-#         # 文件关闭
-#         file_logcat.close()
-#         s.close()
-#         '''
+
 
     # 发送记录日志操作
     def send_logcat_flag(self):
-        # s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        # s.connect(('localhost', int(self.get_conf_value('socketPort'))))
-        # s.send(status.encode())
-        # s.recv(1024).decode()
-        # s.close()
+
         # 杀掉logcat进程
         if self.get_context_map('file_logcat'):
             print('关闭文件')
             self.get_context_map('file_logcat').close()
 
-        print(self.get_context_map('p_logcat').pid)
-        if sys.platform == 'linux':
+        if self.get_context_map('p_logcat'):
             print('杀掉进程')
-            subprocess.call('kill -9 ' + str(self.get_context_map('p_logcat').pid), shell=True)
-            ret = subprocess.Popen('ps -ef | grep logcat', stdout=subprocess.PIPE, shell=True).stdout.readlines()
-            for r in ret:
-                r = r.decode().strip()
-                print(r)
-                while '  ' in r:
-                    r = r.replace('  ', ' ')
-                rlist = r.split(' ')
-                pid = rlist[1]
-                try:
-                    subprocess.call('kill -9 ' + pid, shell=True)
-                except:
-                    pass
-        else:
-            subprocess.call('taskkill /F /pid ' + str(self.get_context_map('p_logcat').pid), shell=True)
-            ret = subprocess.Popen('tasklist -V | findstr logcat', stdout=subprocess.PIPE,
-                                   shell=True).stdout.readlines()
-            for r in ret:
-                r = r.decode().strip()
-                while '  ' in r:
-                    r = r.replace('  ', ' ')
-                rlist = r.split(' ')
-                pid = rlist[1]
-                try:
-                    subprocess.call('taskkill /T /F /pid ' + pid, shell=True)
-                except:
-                    pass
+            self.get_context_map('p_logcat').terminate()
     # 获取wifi连接状态
     # true 连接
     # false 没有连接
