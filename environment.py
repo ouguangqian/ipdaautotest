@@ -68,11 +68,11 @@ def before_scenario(context, scenario):
     t = threading.Thread(target=Utils().get_top_info_to_file,args = (sce_name,))
     t.setDaemon(True)
     t.start()
-    print('开始记录logcat日志信息')
-    global t_logcat
-    t_logcat = threading.Thread(target=Utils().logcat_to_file, args=(sce_name,))
-    t_logcat.setDaemon(True)
-    t_logcat.start()
+    # print('开始记录logcat日志信息')
+    # global t_logcat
+    # t_logcat = threading.Thread(target=Utils().logcat_to_file, args=(sce_name,))
+    # t_logcat.setDaemon(True)
+    # t_logcat.start()
     print('执行场景前处理，回到主界面')
     try:
         Common().back_to_launcher()
@@ -95,7 +95,8 @@ def after_scenario(context, scenario):
     sce_name = scenario.name
     status = scenario.status
     try:
-        Utils().send_logcat_flag()
+        # Utils().send_logcat_flag()
+        print(' ')
     except Exception as e:
         print(e)
     finally:
@@ -111,12 +112,12 @@ def after_scenario(context, scenario):
                 loop += 1
         print(t.is_alive())
 
-        print("检查线程状态")
-        print(t_logcat.is_alive())
-        t_logcat._stop()
-        t_logcat.join()
-        print("检查线程是否停止")
-        print(t_logcat._is_stopped)
+        # print("检查线程状态")
+        # print(t_logcat.is_alive())
+        # t_logcat._stop()
+        # t_logcat.join()
+        # print("检查线程是否停止")
+        # print(t_logcat._is_stopped)
 
         if not 'passed' == status:
             png_name = Utils().take_screenshot()
