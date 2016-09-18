@@ -228,17 +228,17 @@ class Utils:
         # s.listen(10)
         # 开始记录日志
         os.popen(log_cmd + ' -c ')
+        logcat_cmd = log_cmd + ' *:D'
+
         file_logcat = open(log_path, 'w', encoding='utf-8')
 
-
-        p_logcat = subprocess.Popen(log_cmd, stdout=file_logcat, stderr=subprocess.PIPE)
+        p_logcat = subprocess.Popen(logcat_cmd, stdout=file_logcat, stderr=subprocess.PIPE)
         self.set_context_map('file_logcat', file_logcat)
         self.set_context_map('p_logcat', p_logcat)
 
 
     # 发送记录日志操作
     def send_logcat_flag(self):
-
         # 杀掉logcat进程
         if self.get_context_map('file_logcat'):
             print('关闭文件')
@@ -247,6 +247,8 @@ class Utils:
         if self.get_context_map('p_logcat'):
             print('杀掉进程')
             self.get_context_map('p_logcat').terminate()
+
+
     # 获取wifi连接状态
     # true 连接
     # false 没有连接
