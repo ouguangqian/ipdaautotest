@@ -348,7 +348,7 @@
       当< 重启设备
       当< 延时
           |sleep_time|
-          |30        |
+          |90        |
       那么< 验证放音通道一致
           |chk_tinymix|
           |ASP RADIO Route|
