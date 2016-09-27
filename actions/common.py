@@ -30,7 +30,7 @@ class Common:
                     pass
                 elif 'pateo.dls.serviceui'.__eq__(package_name):
                     pass
-                elif 'pateo.dls.app.videoui'.__eq__(package_name):
+                elif 'com.qiyi.video.auto'.__eq__(package_name):
                     Video().back_to_launcher()
                 elif 'com.pateonavi.naviapp'.__eq__(package_name):
                     Navi().back_to_launcher()
@@ -60,7 +60,7 @@ class Common:
                     pass
                 elif 'com.qinggan.app.serviceui'.__eq__(package_name):
                     pass
-                elif 'com.qinggan.app.video'.__eq__(package_name):
+                elif 'com.qiyi.video.auto'.__eq__(package_name):
                     Video().back_to_launcher()
                 elif 'com.pateonavi.naviapp'.__eq__(package_name):
                     Navi().back_to_launcher()
@@ -131,7 +131,7 @@ class Common:
                 return '车辆'
             elif 'pateo.dls.serviceui'.__eq__(package_name):
                 return '服务'
-            elif 'pateo.dls.app.videoui'.__eq__(package_name):
+            elif 'com.qiyi.video.auto'.__eq__(package_name):
                 return '视频'
             elif 'com.pateonavi.naviapp'.__eq__(package_name):
                 return '导航'
@@ -152,7 +152,7 @@ class Common:
                 return '车辆'
             elif 'com.qinggan.app.serviceui'.__eq__(package_name):
                 return '服务'
-            elif 'com.qinggan.app.video'.__eq__(package_name):
+            elif 'com.qiyi.video.auto'.__eq__(package_name):
                 return '视频'
             elif 'com.pateonavi.naviapp'.__eq__(package_name):
                 return '导航'
