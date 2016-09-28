@@ -195,10 +195,25 @@ def step_impl(context):
     # 从列表中查找指定视频并播放
     ele = Video().get_aqy_mine_his_video_title()
     if ele.wait.exists():
-        if ele.scroll.vert.to(text=video_name):
-            d(text=video_name).click.wait()
+        # if ele.scroll.vert.to(text=video_name):
+        for e in ele:
+            if e.text().strip() == video_name:
+                d(text=video_name).click.wait()
+                break
         else:
             Utils().raise_Exception_info('没有查找到指定《' + video_name + '》视频')
+    else:
+        Utils().raise_Exception_info('播放记录为空')
+
+@when(u'< 获取最新播放记录视频')
+def step_impl(context):
+    # 获取出参
+    param = context.table[0]['o_result']
+
+    # 获取第一个视频名称
+    ele = Video().get_aqy_mine_his_video_title()
+    if ele.wait.exists():
+        Utils().set_context_map(param, ele[0].text().strip())
     else:
         Utils().raise_Exception_info('播放记录为空')
 
@@ -208,6 +223,7 @@ def step_impl(context):
     # 获取接受返回值参数
     param = context.table[0]['o_result']
     video_name = Video().click_video_search_hot_ele()
+
     Utils().set_context_map(param, video_name)
 
 
