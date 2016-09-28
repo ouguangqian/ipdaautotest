@@ -66,10 +66,10 @@ def step_impl(context):
     # 获取视频名称
     video_name = context.table[0]['video_name']
     # 查找并播放本地视频
-    local_video = Video().get_aqy_menu_mine_local_video()
+    local_video = Video().get_aqy_mine_local_video_title()
     if local_video.wait.exists():
         for lv in local_video:
-            if lv.text() == video_name:
+            if lv.text == video_name:
                 lv.click.wait()
                 exists_flag = True
                 break
@@ -95,7 +95,7 @@ def step_impl(context):
     oldTime = Video().get_aqy_player_currentTime()
     old_time = ''
     if oldTime.wait.exists():
-        old_time = oldTime.text()
+        old_time = oldTime.text
     else:
         Utils().raise_Exception_info('当前播放时间控件不存在')
 
@@ -104,11 +104,11 @@ def step_impl(context):
     newTime = Video().get_aqy_player_currentTime()
     new_time = ''
     if newTime.wait.exists():
-        new_time = newTime.text()
+        new_time = newTime.text
     else:
         Utils().raise_Exception_info('当前播放时间控件不存在')
 
-    if not str(new_time == old_time).lower() == str(chk_is_playing).lower():
+    if str(new_time == old_time).lower() == str(chk_is_playing).lower():
         Utils().raise_Exception_info('视频播放状态不一致')
 
 
@@ -125,7 +125,7 @@ def step_impl(context):
     if not video_title.wait.exists():
         Utils().raise_Exception_info('视频名称控件不存在')
 
-    video_name = video_title.text()
+    video_name = video_title.text
 
     if not chk_video_name == video_name:
         Utils().raise_Exception_info('视频文件名称不一致，期望值为《' + chk_video_name + '》，实际值为《' + video_name + '》')
@@ -197,7 +197,7 @@ def step_impl(context):
     if ele.wait.exists():
         # if ele.scroll.vert.to(text=video_name):
         for e in ele:
-            if e.text().strip() == video_name:
+            if e.text.strip() == video_name:
                 d(text=video_name).click.wait()
                 break
         else:
@@ -213,7 +213,7 @@ def step_impl(context):
     # 获取第一个视频名称
     ele = Video().get_aqy_mine_his_video_title()
     if ele.wait.exists():
-        Utils().set_context_map(param, ele[0].text().strip())
+        Utils().set_context_map(param, ele[0].text.strip())
     else:
         Utils().raise_Exception_info('播放记录为空')
 
@@ -222,17 +222,24 @@ def step_impl(context):
 def step_impl(context):
     # 获取接受返回值参数
     param = context.table[0]['o_result']
-    video_name = Video().click_video_search_hot_ele()
+    video_name = Video().get_aqy_search_hot_title()
+    if video_name.wait.exists():
+        idx = random.randint(0, len(video_name) - 1)
+        Utils().set_context_map(param, video_name[idx].text)
+        video_name[idx].click.wait()
+    else:
+        Utils().raise_Exception_info('热门搜索记录为空')
 
-    Utils().set_context_map(param, video_name)
 
-
-@when(u'< 搜索搜索记录视频')
+@when(u'< 获取最新搜索记录')
 def step_impl(context):
     # 获取接受返回值的参数
     param = context.table[0]['o_result']
-    video_name = Video().click_video_search_his_ele()
-    Utils().set_context_map(param, video_name)
+    video_name = Video().get_aqy_search_his_title()
+    if video_name.wait.exists():
+        Utils().set_context_map(param, video_name[0].text)
+    else:
+        Utils().raise_Exception_info('搜索记录为空')
 
 
 @when(u'< 播放爱奇艺推荐视频')
@@ -242,7 +249,7 @@ def step_impl(context):  # 修改
 
     ele = Video().get_aqy_recommend_right_up_title()
     if ele.wait.exists():
-        Utils().set_context_map(param, ele.text())
+        Utils().set_context_map(param, ele.text)
         ele.click.wait()
     else:
         Utils().raise_Exception_info('爱奇艺推荐视频不存在')
@@ -286,7 +293,7 @@ def step_impl(context):
     video_title = Video().get_aqy_mine_fav_video_title()
     if video_title.wait.exists():
         for vt in video_title:
-            if video_name == vt.text().strip():
+            if video_name == vt.text.strip():
                 flag = True
                 break
     else:
