@@ -96,9 +96,6 @@
       那么< 验证当前界面包含文本
           |contains_txt|
           |刘德华   |
-      那么< 验证音乐是否播放
-          |is_playing|
-          |true     |
 
     @ivoka_video_test
     场景: 呼叫语音助理打开视频
@@ -642,9 +639,6 @@
         那么< 验证音乐名称一致
           |chk_music_name|
           |忘情水       |
-        那么< 验证音乐是否播放
-          |is_playing|
-          |true     |
     @ivoka_audio_test
     场景: 语音来一首电台情歌打开音乐应用
         当< ivoka唤醒应用
@@ -659,9 +653,6 @@
         那么< 验证音乐名称一致
           |chk_music_name|
           |电台情歌       |
-        那么< 验证音乐是否播放
-          |is_playing|
-          |true     |
     @ivoka_audio_test
     场景: 语音来首两只蝴蝶打开音乐应用
         当< ivoka唤醒应用
@@ -676,9 +667,6 @@
         那么< 验证音乐名称一致
           |chk_music_name|
           |两只蝴蝶       |
-        那么< 验证音乐是否播放
-          |is_playing|
-          |true     |
     @ivoka_audio_test
     场景: 语音我要听时间都去哪儿了打开音乐应用
         当< ivoka唤醒应用
@@ -693,9 +681,6 @@
         那么< 验证音乐名称一致
           |chk_music_name|
           |时间都去哪儿了       |
-        那么< 验证音乐是否播放
-          |is_playing|
-          |true     |
     @ivoka_audio_test
     场景: 语音来几首张学友的歌打开音乐应用
         当< ivoka唤醒应用
@@ -710,9 +695,6 @@
         那么< 验证歌手名字一致
           |chk_artist|
           |张学友       |
-        那么< 验证音乐是否播放
-          |is_playing|
-          |true     |
     @ivoka_audio_test
     场景: 语音我要听周华健的歌打开音乐应用
         当< ivoka唤醒应用
@@ -727,9 +709,6 @@
         那么< 验证歌手名字一致
           |chk_artist|
           |周华健       |
-        那么< 验证音乐是否播放
-          |is_playing|
-          |true     |
     @ivoka_audio_test
     场景: 语音我想听一下张学友的吻别打开音乐应用
         当< ivoka唤醒应用
@@ -747,9 +726,6 @@
       那么< 验证音乐名称一致
           |chk_music_name|
           |吻别       |
-        那么< 验证音乐是否播放
-          |is_playing|
-          |true     |
     @ivoka_audio_test
     场景: 语音随便听听打开音乐应用
         当< ivoka唤醒应用

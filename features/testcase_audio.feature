@@ -380,6 +380,9 @@
           |o_result|
           |o_name|
         当< 切换下一首音乐
+        当< 延时
+          |sleep_time|
+          |1         |
         当< 切换上一首音乐
         那么< 验证音乐名称一致
           |chk_music_name|
