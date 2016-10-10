@@ -16,9 +16,6 @@
         那么< 验证音乐名称一致
           |chk_music_name|
           |时间都去哪儿了|
-        那么< 验证音乐是否播放
-          |is_playing|
-          |true     |
         那么< 验证放音通道一致
           |chk_tinymix|
           |ASP MEDIA Route|

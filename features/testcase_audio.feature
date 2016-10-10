@@ -39,9 +39,6 @@
         那么< 验证歌手名字一致
           |chk_artist|
           |张杰        |
-        那么< 验证音乐是否播放
-          |is_playing|
-          |true      |
      @net_music_test
     场景: 搜索网络音乐并指定音乐播放
         当< 打开音乐搜索
@@ -57,9 +54,6 @@
         那么< 验证歌手名字一致
           |chk_artist|
           |刘德华       |
-        那么< 验证音乐是否播放
-          |is_playing|
-          |true      |
 
        @prevAfter5sTest
     场景: 播放5s后切换上一首音乐，音乐从头播放,不会切歌
@@ -131,18 +125,6 @@
         当< 取消音乐搜索
         那么< 验证当前为音乐主界面
 
-      @smart_music_test @ignore
-    场景: 打开并播放今日歌单中的歌曲，校验歌曲正常播放
-        当< 打开今日歌单
-        当< 随机播放今日歌单
-          |o_result|
-          |o_ret   |
-        那么< 验证音乐名称一致
-          |chk_music_name|
-          |o_ret         |
-        那么< 验证音乐是否播放
-          |is_playing|
-          |true      |
 
       @tata @ignore
     场景: 校验听ta的歌的歌手是否一致
@@ -154,16 +136,6 @@
         那么< 验证听ta的歌是否一致
           |chk_artist|
           |野孩子       |
-      @netMusicTest @ignore
-    场景: 随机播放网络音乐，验证网络音乐播放正常，放音通道正确
-        当< 打开酷我音乐
-        当< 随机播放网络音乐
-        那么< 验证音乐是否播放
-          |is_playing|
-          |true      |
-        那么< 验证放音通道一致
-          |chk_tinymix|
-          |ASP MEDIA Route|
 
     场景: 播放FLAC格式的音乐，验证音乐放音通道正常
         当< 打开我的音乐库

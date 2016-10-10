@@ -100,7 +100,7 @@
         |FLV格式.flv     |
       那么< 验证视频播放名称一致
         |chk_name|
-        |FLV格式     |
+        |FLV格式.flv     |
       那么< 验证视频是否播放
         |chk_is_playing|
         |true          |
@@ -117,7 +117,7 @@
         |MOV格式.mov|
       那么< 验证视频播放名称一致
         |chk_name|
-        |MOV格式     |
+        |MOV格式.mov     |
       那么< 验证视频是否播放
         |chk_is_playing|
         |true          |
@@ -134,7 +134,7 @@
         |MP4格式.mp4     |
       那么< 验证视频播放名称一致
         |chk_name|
-        |MP4格式     |
+        |MP4格式.mp4     |
       那么< 验证视频是否播放
         |chk_is_playing|
         |true          |
@@ -151,7 +151,7 @@
         |AVI格式.avi     |
       那么< 验证视频播放名称一致
         |chk_name|
-        |AVI格式     |
+        |AVI格式.avi     |
       那么< 验证视频是否播放
         |chk_is_playing|
         |true          |
@@ -168,6 +168,11 @@
       当< 延时
         |sleep_time|
         |30         |
+      当< 回到系统主界面
+      当< 打开九宫格界面
+      当< 打开视频应用
+      当< 打开爱奇艺顶部菜单
+      当< 打开视频搜索
       当< 清空视频搜索记录并验证
 
     @play_from_playHis_test

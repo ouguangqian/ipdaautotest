@@ -82,7 +82,7 @@ class Video:
     def get_aqy_search_his_title(self):
         view = Utils().get_ele_by_resourceId(pkg_name + ':id/activity_search_flowlayout_history')
         if view.wait.exists():
-            return Utils().get_ele_by_resourceId(pkg_name + ':id/item_search_hotandhistory_tv')
+            return view.child(resourceId=pkg_name + ':id/item_search_hotandhistory_tv')
         else:
             Utils().raise_Exception_info('搜索记录视图为空')
 
