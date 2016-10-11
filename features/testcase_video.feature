@@ -63,10 +63,10 @@
         |魔兽  |
       当< 从搜索结果中播放指定视频
         |video_name|
-        |魔兽    |
+        |惊天魔兽    |
       那么< 验证视频播放名称一致
         |chk_name|
-        |魔兽     |
+        |惊天魔兽     |
       那么< 验证视频是否播放
         |chk_is_playing|
         |true          |
@@ -88,7 +88,7 @@
         |chk_is_playing|
         |true          |
 
-    @play_local_video_flv_test
+    @play_local_video_flv_test @ignore
     场景: 播放本地FLV视频
       当< 打开九宫格界面
       当< 打开视频应用
@@ -186,7 +186,7 @@
         |魔兽    |
       当< 从搜索结果中播放指定视频
         |video_name|
-        |魔兽    |
+        |惊天魔兽    |
       当< 延时
         |sleep_time|
         |10         |
@@ -202,7 +202,7 @@
         |魔兽     |
       那么< 验证视频播放名称一致
         |chk_name|
-        |魔兽     |
+        |惊天魔兽     |
       那么< 验证视频是否播放
         |chk_is_playing|
         |true          |
@@ -259,15 +259,4 @@
       那么< 验证两个对象值
         |param1|option|param2|
         |o_video_name|==|o_play_his1|
-
-
-
-
-
-
-
-
-
-
-
 
