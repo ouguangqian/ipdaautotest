@@ -111,7 +111,7 @@
         那么< 验证电台是否播放
           |chk_is_playing|
           |true          |
-      @radioQTTest @part1
+      @radioQTTest @part1 @ignore
     场景: 随机播放蜻蜓FM并验证标题和节目是否一致
         当< 打开蜻蜓FM
         当< 随机播放蜻蜓FM栏目
@@ -132,7 +132,7 @@
         那么< 验证放音通道一致
           |chk_tinymix|
           |ASP MEDIA Route|
-    @qtLatestTest @part1
+    @qtLatestTest @part1 @ignore
     场景: 随机播放蜻蜓FM并验证最近收听记录
         当< 打开蜻蜓FM
         当< 随机播放蜻蜓FM栏目
@@ -145,7 +145,7 @@
         那么< 验证最近收听含有节目
           |chk_qt_name|
           |o_name     |
-      @qtFavedTest @part2
+      @qtFavedTest @part2 @ignore
     场景: 收藏蜻蜓FM并验证我的收藏存在收藏记录
         当< 打开蜻蜓FM
         当< 随机播放蜻蜓FM栏目
@@ -164,7 +164,7 @@
           |chk_qt_title|chk_is_faved|
           |o_title     |false        |
 
-         @part2
+         @part2 @ignore
     场景: 播放收藏的fm并验证播放标题是否正确
         当< 打开蜻蜓FM
         当< 随机播放蜻蜓FM栏目
@@ -185,7 +185,7 @@
           |o_title_faved     |
         当< 收藏或取消蜻蜓FM电台
 
-      @qtNestTest @part2
+      @qtNestTest @part2 @ignore
     场景: 播放蜻蜓FM的下一曲，验证栏目名称不变，节目名称改变
         当< 打开蜻蜓FM
         当< 随机播放蜻蜓FM栏目
@@ -266,7 +266,7 @@
         那么< 验证电台是否播放
           |chk_is_playing|
           |true          |
-      @tgsqTest @part2
+      @tgsqTest @part2 @ignore
     场景: 收音机听歌识曲功能验证
         当< 打开FM_AM选择界面
         当< 播放指定FM节目
@@ -291,7 +291,7 @@
          |music_name|
          |小城故事        |
 
-    @ide_audio_radio @part2
+    @ide_audio_radio @part2 @ignore
     场景: 同一首歌听歌识别曲两遍后，验证播放状态和歌曲名字
         当< 打开FM_AM选择界面
         当< 播放指定FM节目
