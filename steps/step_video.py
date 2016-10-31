@@ -88,7 +88,7 @@ def step_impl(context):
     adtime = Video().get_aqy_player_top_adtime()
 
     if adtime.wait.exists(timeout=5000):
-        adtime.wait.gone(timeout=60000)
+        adtime.wait.gone(timeout=120000)
 
     # 获取当前播放时间控件
     oldTime = Video().get_aqy_player_currentTime()

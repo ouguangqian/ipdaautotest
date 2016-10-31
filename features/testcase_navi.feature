@@ -88,6 +88,9 @@
         那么< 验证地址是否被收藏
           |address|is_faved|
           |o_address|true  |
+        当< 删除指定地址
+          |address|
+          |o_address|
 
     @chk_navi_faved_cancel_test
     场景: 验证导航的地址收藏取消功能
