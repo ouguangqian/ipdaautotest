@@ -9,6 +9,11 @@ from utils.utils import Utils
 
 @when(u'< 打开爱奇艺顶部菜单')
 def step_impl(context):  # 新加步骤
+
+    # 判断是否在搜索界面，如果在搜索界面先取消搜索
+    cancel_ele = d(text='取消')
+    if cancel_ele.exists:
+        cancel_ele.click.wait()
     # 获取左侧菜单
     left_menu = Video().get_aqy_left_menu_frame()
     if left_menu.wait.exists():
@@ -64,7 +69,15 @@ def step_impl(context):
     exists_flag = False
     # 获取视频名称
     video_name = context.table[0]['video_name']
+    video_folder = context.table[0]['video_folder']
+    if video_folder != '.':
+        folder_ele = d(text=video_folder)
+        if folder_ele.wait.exists():
+            d(text=video_folder).click.wait()
+        else:
+            Utils().raise_Exception_info('指定文件夹不存在')
     # 查找并播放本地视频
+
     local_video = Video().get_aqy_mine_local_video_title()
     if local_video.wait.exists():
         for lv in local_video:

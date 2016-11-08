@@ -10,8 +10,8 @@
         当< 打开我的视频
         当< 打开本地视频
         当< 播放本地视频
-          |video_name|
-          |MOV格式.mov|
+          |video_folder|video_name|
+          |tfdisk|MOV格式.mov|
         当< 延时
           |sleep_time|
           |5         |
@@ -39,8 +39,8 @@
         当< 打开我的视频
         当< 打开本地视频
         当< 播放本地视频
-            |video_name|
-            |MOV格式.mov|
+            |video_folder|video_name|
+            |tfdisk|MOV格式.mov|
         当< 手机拨打号码
             |phone_no|
             |10086   |
@@ -79,8 +79,8 @@
       当< 打开我的视频
       当< 打开本地视频
       当< 播放本地视频
-        |video_name|
-        |IPDA.mp4     |
+        |video_folder|video_name|
+        |.|IPDA.mp4     |
       当< 延时
         |sleep_time|
         |3         |
@@ -88,7 +88,7 @@
         |chk_is_playing|
         |true          |
 
-    @play_local_video_flv_test @ignore
+    @play_local_video_flv_test
     场景: 播放本地FLV视频
       当< 打开九宫格界面
       当< 打开视频应用
@@ -96,8 +96,8 @@
       当< 打开我的视频
       当< 打开本地视频
       当< 播放本地视频
-        |video_name|
-        |FLV格式.flv     |
+        |video_folder|video_name|
+        |tfdisk|FLV格式.flv     |
       那么< 验证视频播放名称一致
         |chk_name|
         |FLV格式.flv     |
@@ -113,8 +113,8 @@
       当< 打开我的视频
       当< 打开本地视频
       当< 播放本地视频
-        |video_name|
-        |MOV格式.mov|
+        |video_folder|video_name|
+        |tfdisk|MOV格式.mov|
       那么< 验证视频播放名称一致
         |chk_name|
         |MOV格式.mov     |
@@ -130,8 +130,8 @@
       当< 打开我的视频
       当< 打开本地视频
       当< 播放本地视频
-        |video_name|
-        |MP4格式.mp4     |
+        |video_folder|video_name|
+        |tfdisk|MP4格式.mp4     |
       那么< 验证视频播放名称一致
         |chk_name|
         |MP4格式.mp4     |
@@ -147,8 +147,8 @@
       当< 打开我的视频
       当< 打开本地视频
       当< 播放本地视频
-        |video_name|
-        |AVI格式.avi     |
+        |video_folder|video_name|
+        |tfdisk|AVI格式.avi     |
       那么< 验证视频播放名称一致
         |chk_name|
         |AVI格式.avi     |

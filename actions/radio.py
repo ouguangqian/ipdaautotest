@@ -373,7 +373,7 @@ class Radio:
                 for c in ele_containers:
                     e = c.child(resourceId=pkg_name + ':id/list_freq')
                     if e.text.strip() == fm_no:
-                        is_faved = e.sibling(resourceId = pkg_name + ':id/crown').exists
+                        is_faved = e.sibling(resourceId=pkg_name + ':id/crown').exists
                         self.hide_radio_selector_drawer_ele()
                         return is_faved
                 # 如果不存在滑动到下一屏
@@ -381,7 +381,7 @@ class Radio:
                     ele_containers = self.__get_radio_selector_fm_listview_container_ele()
                     for c in ele_containers:
                         e = c.child(resourceId=pkg_name + ':id/list_freq')
-                        if e.text.strip == fm_no:
+                        if e.text.strip() == fm_no:
                             is_faved = e.sibling(resourceId=pkg_name + ':id/crown').exists
                             self.hide_radio_selector_drawer_ele()
                             return is_faved
