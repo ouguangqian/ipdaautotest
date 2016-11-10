@@ -128,6 +128,14 @@ class Video:
     def get_aqy_search_result_list(self):
         return Utils().get_ele_by_resourceId(pkg_name + ':id/search_result_nfilm_recv')
 
+    def get_back_to_top_menu(self):
+        '''
+        从本地视频列表中返回到顶部菜单
+        :return: 顶部菜单返回控件对象
+        '''
+        return Utils().get_ele_by_resourceId(pkg_name + ':id/back_top_menu')
+
+
     # 返回主界面
     def back_to_launcher(self):
 
