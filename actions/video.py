@@ -135,6 +135,12 @@ class Video:
         '''
         return Utils().get_ele_by_resourceId(pkg_name + ':id/back_top_menu')
 
+    def get_aqy_video_view_full(self):
+        '''
+        获取视频播放界面
+        :return:
+        '''
+        return Utils().get_ele_by_resourceId(pkg_name + ':id/video_view_full')
 
     # 返回主界面
     def back_to_launcher(self):

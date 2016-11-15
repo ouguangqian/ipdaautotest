@@ -20,6 +20,17 @@ def step_impl(context):  # 新加步骤
     if back_top_menu.exists:
         back_top_menu.click.wait()
 
+    # 判断是否在播放界面
+    view_full = Video().get_aqy_video_view_full()
+    if view_full.exists:
+        back_video = Video().get_aqy_playing_back()
+        if not back_video.exists:
+            d.click(320, 320)
+
+        if back_video.wait.exists():
+            back_video.click.wait()
+
+
     # 获取左侧菜单
     left_menu = Video().get_aqy_left_menu_frame()
     if left_menu.wait.exists():
@@ -111,6 +122,10 @@ def step_impl(context):
 
     # 获取当前播放时间控件
     oldTime = Video().get_aqy_player_currentTime()
+
+    if not oldTime.exists:
+        d.click(320, 320)  # 点击屏幕弹出时间控件
+
     old_time = ''
     if oldTime.wait.exists():
         old_time = oldTime.text
@@ -120,6 +135,10 @@ def step_impl(context):
     time.sleep(5)
 
     newTime = Video().get_aqy_player_currentTime()
+
+    if not newTime.exists:
+        d.click(320, 320)
+
     new_time = ''
     if newTime.wait.exists():
         new_time = newTime.text
@@ -140,6 +159,10 @@ def step_impl(context):
         chk_video_name = param
 
     video_title = Video().get_aqy_playing_title()
+
+    if not video_title.exists:
+        d.click(320, 320)
+
     if not video_title.wait.exists():
         Utils().raise_Exception_info('视频名称控件不存在')
 
