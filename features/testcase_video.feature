@@ -100,7 +100,7 @@
         |tfdisk|FLV格式.flv     |
       那么< 验证视频播放名称一致
         |chk_name|
-        |FLV格式.flv     |
+        |FLV格式     |
       那么< 验证视频是否播放
         |chk_is_playing|
         |true          |
@@ -117,7 +117,7 @@
         |tfdisk|MOV格式.mov|
       那么< 验证视频播放名称一致
         |chk_name|
-        |MOV格式.mov     |
+        |MOV格式     |
       那么< 验证视频是否播放
         |chk_is_playing|
         |true          |
@@ -134,7 +134,7 @@
         |tfdisk|MP4格式.mp4     |
       那么< 验证视频播放名称一致
         |chk_name|
-        |MP4格式.mp4     |
+        |MP4格式     |
       那么< 验证视频是否播放
         |chk_is_playing|
         |true          |
@@ -151,7 +151,7 @@
         |tfdisk|AVI格式.avi     |
       那么< 验证视频播放名称一致
         |chk_name|
-        |AVI格式.avi     |
+        |AVI格式     |
       那么< 验证视频是否播放
         |chk_is_playing|
         |true          |

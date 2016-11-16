@@ -10,16 +10,6 @@ from utils.utils import Utils
 @when(u'< 打开爱奇艺顶部菜单')
 def step_impl(context):  # 新加步骤
 
-    # 判断是否在搜索界面，如果在搜索界面先取消搜索
-    cancel_ele = d(text='取消')
-    if cancel_ele.exists:
-        cancel_ele.click.wait()
-
-    # 判断是否在本地视频列表界面，如果在，返回
-    back_top_menu = Video().get_back_to_top_menu()
-    if back_top_menu.exists:
-        back_top_menu.click.wait()
-
     # 判断是否在播放界面
     view_full = Video().get_aqy_video_view_full()
     if view_full.exists:
@@ -30,6 +20,15 @@ def step_impl(context):  # 新加步骤
         if back_video.wait.exists():
             back_video.click.wait()
 
+    # 判断是否在搜索界面，如果在搜索界面先取消搜索
+    cancel_ele = d(text='取消')
+    if cancel_ele.exists:
+        cancel_ele.click.wait()
+
+    # 判断是否在本地视频列表界面，如果在，返回
+    back_top_menu = Video().get_back_to_top_menu()
+    if back_top_menu.exists:
+        back_top_menu.click.wait()
 
     # 获取左侧菜单
     left_menu = Video().get_aqy_left_menu_frame()
