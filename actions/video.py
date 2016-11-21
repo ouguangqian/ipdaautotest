@@ -106,7 +106,8 @@ class Video:
 
     # 获取爱奇艺推荐视频频道
     def get_aqy_menu_category_recommend(self):
-        return Utils().get_ele_by_text('推荐')
+        ele = Utils().get_ele_by_text('资讯')
+        return ele.sibling(resourceId=pkg_name + ':id/menudetai_title')
 
     # 获取爱奇艺搜索历史列表
     def get_aqy_search_result_title(self):
