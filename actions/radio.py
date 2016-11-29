@@ -377,7 +377,8 @@ class Radio:
                         self.hide_radio_selector_drawer_ele()
                         return is_faved
                 # 如果不存在滑动到下一屏
-                while ele.scroll.vert.forward(steps=5):
+                flag = ele.scroll.vert.forward(steps=5)
+                while flag:
                     ele_containers = self.__get_radio_selector_fm_listview_container_ele()
                     for c in ele_containers:
                         e = c.child(resourceId=pkg_name + ':id/list_freq')
@@ -385,6 +386,8 @@ class Radio:
                             is_faved = e.sibling(resourceId=pkg_name + ':id/crown').exists
                             self.hide_radio_selector_drawer_ele()
                             return is_faved
+
+                    flag = ele.scroll.vert.forward(steps=5)
                 # 判断有没有查找成功
                 Utils().raise_Exception_info('指定《' + fm_no + "》不存在")
             else:
