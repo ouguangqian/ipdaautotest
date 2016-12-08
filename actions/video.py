@@ -19,7 +19,10 @@ class Video:
 
     # 获取右上角推荐视频文件名
     def get_aqy_recommend_right_up_title(self):
-        return Utils().get_ele_by_resourceId(pkg_name + ':id/recommend_focus_item_right_title_up')
+        ele = Utils().get_ele_by_resourceId(pkg_name + ':id/item_recommend_video_1')
+        return ele.child(resourceId=pkg_name + ':id/menudetai_title')
+
+        # return Utils().get_ele_by_resourceId(pkg_name + ':id/recommend_focus_item_right_title_up')
 
     # 获取顶部菜单栏frame
     def get_aqy_left_menu_frame(self):
@@ -106,8 +109,9 @@ class Video:
 
     # 获取爱奇艺推荐视频频道
     def get_aqy_menu_category_recommend(self):
-        ele = Utils().get_ele_by_text('资讯')
-        return ele.sibling(resourceId=pkg_name + ':id/menudetai_title')
+        ele = Utils().get_ele_by_text('推荐')
+        return ele
+        # return ele.sibling(resourceId=pkg_name + ':id/menudetai_title')
 
     # 获取爱奇艺搜索历史列表
     def get_aqy_search_result_title(self):
